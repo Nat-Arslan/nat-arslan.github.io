@@ -19,14 +19,14 @@ import datetime
 from bs4 import BeautifulSoup
 ```
 
-## About This Project
+## 1. About This Project
 
 I try to read books on nature, nature history and popular science as much as I can. Then I wondered is there a gender gap in the amount of published books in these fields. I became curious about the percentage of women, trans and non-binary nature history writers. I found some good articles about gender gap in publishing. Especially [this](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2004956) research on gender gap in academia and its [webpage](https://lukeholman.github.io/genderGap/) is worth looking.
 
-### Is there a place to find information on authors' gender identity?
+## 2. Is there a place to find information on authors' gender identity?
 There are some services that libraries can use like Novelist (which is a division of EBSCO now) that provides detailed information about books and their authors. In 2020 Novelist broadened their database to include trans and non-binary to their database (Reno, 2020). This service is available in Novelist Plus but my university is not subscribed to that. So is there another database for author gender identities? Enters VIAF.
 
-#### What is VIAF?
+### 2.1 What is VIAF?
 You can read more about VIAF [here](https://en.wikipedia.org/wiki/Virtual_International_Authority_File). It is a database that combines information from multiple authorities inclusing libraries.
 
 **Why I use it?**
@@ -45,7 +45,7 @@ I downloaded their date (access [here](http://viaf.org/viaf/data/ ) ). The txt.g
 
 This method ofcourse has limitations such as eliminating authors that doesnt have a wikipedi page or who has it but is in another language. ==So this can and should be improved.== But at least this way I deacresed the file size (from ~ 9 GB) to ~ 94 MB.
 
-### Finding the Nature History Writers
+## 3. Finding the Nature History Writers
 There are many book retailer webpages with decent categorisarion of millions of books. So
 creating a book dataset with author names and book titles is relatively easy. I used [Book Depository](https://www.bookdepository.com/category/2985/Natural-History/browse/viewmode/all?page=2) and scraped its pages with python. 
 
@@ -53,25 +53,27 @@ They have a category called  "Natural History" perfect. I fetched all the books 
 
 There are no gender identity information for authors in Book Depository nor in similar platforms. And this is why I need VIAF dataset.
 
-## Code Workflow
+## 4. Code Workflow
 - Import & edit the Book Depository data
 - Import & edit the VIAF data
-- Cross check and match if a nature writer in Book Depository data exists in VIAF data.
+- Cross check and match if an author listed in the Book Depository data exists in VIAF data.
 - If yes: Go to authors page and get their gender info
 - If no:  Try to predict the authors' gender from their first name by using Natural Language Toolkit
 - Summarise the findings
 
-## Result
-- With this method, I could only match 1/3 of authors to their VIAF pages. This is either becuase my method failed finding their webpages or those pages didnt existed from the beginning. The first is more likely.
-So according to this (mid-accuracy) result 6 out of 10 natural histoy books that were published after 2021 are written by male authors. 
+## 5. Result
+- There are 1230 books published from 2021 until now within "Nature History" category.
+- I retrieved the author gender of~ 37% of these books from VIAF page.
+- For the remaining ~63% of the books/authors I used Natural Language Processing to predict their gender from their first names.
+- The results show that 6 out of 10 natural histoy books that were published after 2021 are written by male authors. 
 
 However it's difficult to fully rely on these results. There are numerous things to improve in this project besides finding a database with broader gender identities. These are:
 - Find a better way to systematically access authors' VIAF pages
 - Perhaps, eliminating VIAF and simply relying on gender prediction can simplify the project
 - Improving the Natural Language Toolkit (NTLK) results to increase the binary-gender prediction accuracy
 
-# Code 
-## Bookdepositort Dataset
+## 6. Code 
+### Bookdepositort Dataset
 
 ```python
 # Import Bookdepository CSV
@@ -151,7 +153,7 @@ for i in range(len(books['authors'])):
 #books['authors'][854]
 ```
 
-## Virtual International Authority File (VIAF) Dataset
+### Virtual International Authority File (VIAF) Dataset
 
 ```python
 # Import VIAF CSV
@@ -342,7 +344,7 @@ data1 = pd.DataFrame({
 data1
 ```
 
-## Predicting gender from first name by using Natural Language Processing
+### Predicting gender from first name by using Natural Language Processing
 
 For those bookdepository author names that didnt match with any VIAF data, we can use NLTK to train and predict the binary gender of the authors from their first names. 
 
@@ -546,7 +548,7 @@ data2
   </tbody>
 </table>
 </div>
-## Summing it all up
+### Summing it all up
 
 ```python
 # Total of VIAF gender & predicted gender
