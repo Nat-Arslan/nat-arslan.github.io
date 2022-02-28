@@ -1,8 +1,8 @@
 ---
 title: "Gender Gap in Nature History Books"
 date: 2022-02-28
-categories: [code]
-tags: [gender, books, nature-history, python] 
+categories: [Code]
+tags: [gender, books, nature-history, python] # TAG names should always be lowercase
 toc: true
 comments: false
 image:
@@ -19,14 +19,63 @@ import datetime
 from bs4 import BeautifulSoup
 ```
 
-## Bookdepositort Dataset
-This dataset is a result of webscraping. I fetched books that were published under natural history category in bookdepository [webpage](https://www.bookdepository.com/category/2985/Natural-History/browse/viewmode/all?page=1). The result was ~ 10,000 books with titles, authors and publishing year. I filtered this data and retrieved the natural history books that were published between "2021 - Present" which yielded ~ 12,500 books
+## About This Project
 
-The link to code is shared below under "Linked Sources".
+I try to read books on nature, nature history and popular science as much as I can. Then I wondered is there a gender gap in the amount of published books in these fields. I became curious about the percentage of women, trans and non-binary nature history writers. I found some good articles about gender gap in publishing. Especially [this](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2004956) research on gender gap in academia and its [webpage](https://lukeholman.github.io/genderGap/) is worth looking.
+
+### Is there a place to find information on authors' gender identity?
+There are some services that libraries can use like Novelist (which is a division of EBSCO now) that provides detailed information about books and their authors. In 2020 Novelist broadened their database to include trans and non-binary to their database (Reno, 2020). This service is available in Novelist Plus but my university is not subscribed to that. So is there another database for author gender identities? Enters VIAF.
+
+#### What is VIAF?
+You can read more about VIAF [here](https://en.wikipedia.org/wiki/Virtual_International_Authority_File). It is a database that combines information from multiple authorities inclusing libraries.
+
+**Why I use it?**
+There are personal pages for many authors in VIAF. Each page includes information about the authors' publication and personal data, including their gender. Check Urusla K. Le Guin's page [here](http://viaf.org/viaf/101734435/#Le_Guin,_Ursula_K.,_1929-2018) for example.
+
+**Downside?**
+The gender category for authors is binary. Check for instance one of my favorite non-binary authors page, [Annalee Newitz]( http://viaf.org/viaf/16492757/#Newitz,_Annalee,_1969-....). Annalee is categorised as "Female". So here is a shout out to VIAF:
+> Please update your database to include more than two gender! 
+
+...
+(Not that anyone will here me from this tiny blog buuut....🤨. Yeap, my rant is finished now. Moving on.) 
+...
+
+**Where to download?**
+I downloaded their date (access [here](http://viaf.org/viaf/data/ ) ). The txt.gz file is 1,33 GB and when its unzipped the csv file is 9,37 GB. In another notebook I simplified this file by getting the rows that only contained "en.wikipedia.org" as a string. Because most authors have a wikipedia page. 
+
+This method ofcourse has limitations such as eliminating authors that doesnt have a wikipedi page or who has it but is in another language. ==So this can and should be improved.== But at least this way I deacresed the file size (from ~ 9 GB) to ~ 94 MB.
+
+### Finding the Nature History Writers
+There are many book retailer webpages with decent categorisarion of millions of books. So
+creating a book dataset with author names and book titles is relatively easy. I used [Book Depository](https://www.bookdepository.com/category/2985/Natural-History/browse/viewmode/all?page=2) and scraped its pages with python. 
+
+They have a category called  "Natural History" perfect. I fetched all the books under this category. The result was ~ 10,000 books with titles, authors and publishing year. I filtered the result to only get the natural history books that were published between "2021 - Present" which yielded ~ 12,500 books. 
+
+There are no gender identity information for authors in Book Depository nor in similar platforms. And this is why I need VIAF dataset.
+
+## Code Workflow
+- Import & edit the Book Depository data
+- Import & edit the VIAF data
+- Cross check and match if a nature writer in Book Depository data exists in VIAF data.
+- If yes: Go to authors page and get their gender info
+- If no:  Try to predict the authors' gender from their first name by using Natural Language Toolkit
+- Summarise the findings
+
+## Result
+- With this method, I could only match 1/3 of authors to their VIAF pages. This is either becuase my method failed finding their webpages or those pages didnt existed from the beginning. The first is more likely.
+So according to this (mid-accuracy) result 6 out of 10 natural histoy books that were published after 2021 are written by male authors. 
+
+However it's difficult to fully rely on these results. There are numerous things to improve in this project besides finding a database with broader gender identities. These are:
+- Find a better way to systematically access authors' VIAF pages
+- Perhaps, eliminating VIAF and simply relying on gender prediction can simplify the project
+- Improving the Natural Language Toolkit (NTLK) results to increase the binary-gender prediction accuracy
+
+# Code 
+## Bookdepositort Dataset
 
 ```python
 # Import Bookdepository CSV
-books = pd.read_csv("/Users/nat/Downloads/NaturalHistory-Bookdepository-2021.csv", dtype=str)
+books = pd.read_csv(".../NaturalHistory-Bookdepository-2021.csv", dtype=str)
 books.head(5)
 ```
 
@@ -104,22 +153,9 @@ for i in range(len(books['authors'])):
 
 ## Virtual International Authority File (VIAF) Dataset
 
-**What is VIAF?**
-You can read more about VIAF [here](https://en.wikipedia.org/wiki/Virtual_International_Authority_File). It is a database that combines information from multiple authorities inclusing libraries.
-
-**Why I use it?**
-Each author VIAF page has information about the author, including their gender. Check Urusla K. Le Guin's page [here](http://viaf.org/viaf/101734435/#Le_Guin,_Ursula_K.,_1929-2018) for example.
-
-**Where to download? Size.**
-This is the dataset downloaded from [here](http://viaf.org/viaf/data/). The txt.gz file is 1,33 GB and when its unzipped the csv file is 9,37 GB. In another notebook I simplified this file by getting the rows that only contained "en.wikipedia.org" as a string. Because most authors have a wikipedia page. 
-
-The link to code is shared below under "Linked Sources".
-
-This method ofcourse has limitations such as eliminating authors that doesnt have a wikipedi page or who has it but is in another language. So this can be improved. But at least this way I deacresed the file size (from ~ 9 GB) to ~ 94 MB.
-
 ```python
 # Import VIAF CSV
-viaf_db = pd.read_csv("/Users/nat/Downloads/viaf-simple.csv", dtype=str)
+viaf_db = pd.read_csv(".../viaf-simple.csv", dtype=str)
 
 # Get the name of the person from the Wiki links
 viaf_db['Name'] = viaf_db['info'].str.split('wiki/').str[1]
@@ -220,8 +256,8 @@ viaf_authors = pd.DataFrame(zipped1, columns=['Author', 'Book', 'Links'])
 predict_authors = pd.DataFrame(zipped2, columns=['Author', 'Book', 'Names'])
 
 # storing these dataframes in a csv file
-viaf_authors.to_csv(r'/Users/nat/Downloads/viaf_author_links.csv') #, index = None
-predict_authors.to_csv(r'/Users/nat/Downloads/author_names_to_predict.csv') 
+viaf_authors.to_csv(r'.../viaf_author_links.csv') #, index = None
+predict_authors.to_csv(r'.../author_names_to_predict.csv') 
 ```
 
 
@@ -241,7 +277,7 @@ In other words with this method we accessed ~ 37% of the authors gender data fro
 
 ```python
 # Import CSV
-viaf_authors = pd.read_csv("/Users/nat/Downloads/viaf_author_links.csv", dtype=str)
+viaf_authors = pd.read_csv(".../viaf_author_links.csv", dtype=str)
 # Create an empty column for gender
 viaf_authors["Gender"] = ""
 viaf_authors.head(5)
@@ -285,10 +321,10 @@ for i in range(len(viaf_authors)):
 
 ```python
 # Export to CSV 
-viaf_authors.to_csv('/Users/nat/Downloads/Viaf_authors_gender.csv')
+viaf_authors.to_csv('.../Viaf_authors_gender.csv')
 
 # Import CSV
-authors = pd.read_csv("/Users/nat/Downloads/Viaf_authors_gender.csv", dtype=str)
+authors = pd.read_csv(".../Viaf_authors_gender.csv", dtype=str)
 authors.head(5)
 ```
 
@@ -308,9 +344,9 @@ data1
 
 ## Predicting gender from first name by using Natural Language Processing
 
-For those bookdepository author names that didnt match with any VIAF data we can use NLTK to train and predict the binary gender of the authors from their first names. 
+For those bookdepository author names that didnt match with any VIAF data, we can use NLTK to train and predict the binary gender of the authors from their first names. 
 
-Of course the method is problematic. Not just because it predicts and assigns the wrong  gender to authors' first name but also because of the binary gender assumption. In this method there is no room for non-bianry and trans people. I tested the trained NLTK with my name and with 80% accuracy the code said I was a male. Well, I'm not. 
+Of course the method is problematic. Not just because it predicts and assigns the wrong  gender to authors' first name but also because of the binary gender assumption. In this method there is no room for non-bianry and trans people. I tested the trained NLTK with my name and with 80% accuracy the code said I was a male. Well ... I'm not. 
 
 ```python
 # Source: https://www.geeksforgeeks.org/python-gender-identification-by-name-using-nltk/
@@ -322,7 +358,7 @@ import nltk
 
 ```python
 # Import CSV
-predict_authors = pd.read_csv("/Users/nat/Downloads/author_names_to_predict.csv", dtype=str)
+predict_authors = pd.read_csv(".../author_names_to_predict.csv", dtype=str)
 
 # Create a colum for first names
 predict_authors["FirstName"] = ""
@@ -576,3 +612,8 @@ plt.title('Gender Gap')
 ![Gender Gap](/attachments/images/2022-02-28-Gender_Gap_Nature_History_Books.jpg) 
 
 
+
+## References
+Reno, A. (2020) _Author gender identity added to NoveList_, EBSCO Information Services, Inc. Available at: [https://www.ebsco.com/blogs/novelist/author-gender-identity-added-novelist](https://www.ebsco.com/blogs/novelist/author-gender-identity-added-novelist) (Accessed: 25 February 2022).
+
+## Linked Sources
