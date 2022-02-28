@@ -2,11 +2,9 @@
 title: "Gender Gap in Nature History Books"
 date: 2022-02-28
 categories: [code]
-tags: [gender, books, nature-history, python]     # TAG names should always be lowercase
+tags: [gender, books, nature-history, python] 
 toc: true
 comments: false
-math: true
-mermaid: true
 ---
 
 <div class="toc"><ul class="toc-item"><li><span><a href="#Bookdepositort-Dataset" data-toc-modified-id="Bookdepositort-Dataset-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Bookdepositort Dataset</a></span></li><li><span><a href="#Virtual-International-Authority-File-(VIAF)-Dataset" data-toc-modified-id="Virtual-International-Authority-File-(VIAF)-Dataset-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Virtual International Authority File (VIAF) Dataset</a></span><ul class="toc-item"><li><span><a href="#Check-VIAF-links-by-using-the-Bookdepository-author-names" data-toc-modified-id="Check-VIAF-links-by-using-the-Bookdepository-author-names-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Check VIAF links by using the Bookdepository author names</a></span></li><li><span><a href="#Fetching-gender-data-from-VIAF-pages-with-Beautifulsoup" data-toc-modified-id="Fetching-gender-data-from-VIAF-pages-with-Beautifulsoup-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Fetching gender data from VIAF pages with Beautifulsoup</a></span></li><li><span><a href="#Statistics-(VIAF)" data-toc-modified-id="Statistics-(VIAF)-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Statistics (VIAF)</a></span></li></ul></li><li><span><a href="#Predicting-gender-from-first-name-by-using-Natural-Language-Processing" data-toc-modified-id="Predicting-gender-from-first-name-by-using-Natural-Language-Processing-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Predicting gender from first name by using Natural Language Processing</a></span><ul class="toc-item"><li><span><a href="#Statistics-(NTLK)" data-toc-modified-id="Statistics-(NTLK)-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Statistics (NTLK)</a></span></li></ul></li><li><span><a href="#Summing-it-all-up" data-toc-modified-id="Summing-it-all-up-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Summing it all up</a></span></li></ul></div>
@@ -677,7 +675,7 @@ plt.savefig('/Users/nat/Desktop/gender-gap.png', dpi = 100)
 plt.show() 
 ```
 
-![Gender Gap](/attachments/images/2022-02-28-Gender_Gap_Nature_History_Books.png) 
+![Gender Gap](/attachments/images/2022-02-28-Gender_Gap_Nature_History_Books.jpg) 
 
 ```python
 
