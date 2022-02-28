@@ -22,15 +22,11 @@ This dataset is a result of webscraping. I fetched books that were published und
 
 The link to code is shared below under "Linked Sources".
 
-
 ```python
 # Import Bookdepository CSV
 books = pd.read_csv("/Users/nat/Downloads/NaturalHistory-Bookdepository-2021.csv", dtype=str)
 books.head(5)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -101,10 +97,6 @@ books.head(5)
   </tbody>
 </table>
 </div>
-
-
-
-
 ```python
 # Fill in the NaN values to prevent future errors
 for i in range(len(books['authors'])):
@@ -135,8 +127,6 @@ The link to code is shared below under "Linked Sources".
 
 This method ofcourse has limitations such as eliminating authors that doesnt have a wikipedi page or who has it but is in another language. So this can be improved. But at least this way I deacresed the file size (from ~ 9 GB) to ~ 94 MB.
 
-
-
 ```python
 # Import VIAF CSV
 viaf_db = pd.read_csv("/Users/nat/Downloads/viaf-simple.csv", dtype=str)
@@ -150,10 +140,6 @@ viaf_db.drop('Unnamed: 0', axis=1, inplace=True)
 viaf_db.head(5)
 
 ```
-
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -211,13 +197,9 @@ viaf_db.head(5)
   </tbody>
 </table>
 </div>
-
-
-
 ### Check VIAF links by using the Bookdepository author names
 
 So VIAF file may contain many people and not necesseraly only authors. But we already have our author names from bookdepository. All we need to do is to cross check and link the book depository authors to their VIAF pages (if it exists). 
-
 
 ```python
 links = []
@@ -285,7 +267,6 @@ In other words with this method we accessed ~ 37% of the authors gender data fro
 
 ### Fetching gender data from VIAF pages with Beautifulsoup 
 
-
 ```python
 # Import CSV
 viaf_authors = pd.read_csv("/Users/nat/Downloads/viaf_author_links.csv", dtype=str)
@@ -293,7 +274,6 @@ viaf_authors = pd.read_csv("/Users/nat/Downloads/viaf_author_links.csv", dtype=s
 viaf_authors["Gender"] = ""
 viaf_authors.head(5)
 ```
-
 
 ```python
 
@@ -331,7 +311,6 @@ for i in range(len(viaf_authors)):
 
 ```
 
-
 ```python
 # Export to CSV 
 viaf_authors.to_csv('/Users/nat/Downloads/Viaf_authors_gender.csv')
@@ -342,8 +321,6 @@ authors.head(5)
 ```
 
 ### Statistics (VIAF)
-
-
 ```python
 f1 = authors['Gender'].value_counts()['Female'] # 113 <class 'numpy.int64'>
 m1 = authors['Gender'].value_counts()['Male'] # 202
@@ -363,8 +340,6 @@ For those bookdepository author names that didnt match with any VIAF data we can
 
 Of course the method is problematic. Not just because it predicts and assigns the wrong  gender to authors' first name but also because of the binary gender assumption. In this method there is no room for non-bianry and trans people. I tested the trained NLTK with my name and with 80% accuracy the code said I was a male. Well, I'm not. 
 
-
-
 ```python
 # Source: https://www.geeksforgeeks.org/python-gender-identification-by-name-using-nltk/
 
@@ -372,7 +347,6 @@ import random
 from nltk.corpus import names
 import nltk
 ```
-
 
 ```python
 # Import CSV
@@ -387,7 +361,6 @@ predict_authors["Gender"] = ""
 
 predict_authors.head(5)
 ```
-
 
 ```python
 import random
@@ -454,9 +427,6 @@ for i in range(len(predict_authors)): #iterate over rows
 #pd.set_option('display.max_rows', None)
 predict_authors.head(5)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -534,11 +504,7 @@ predict_authors.head(5)
 </table>
 </div>
 
-
-
 ### Statistics (NTLK)
-
-
 ```python
 f2 = predict_authors['Gender'].value_counts()['Female'] # 133 OR 186
 m2 = predict_authors['Gender'].value_counts()['Male'] # 296
@@ -551,9 +517,6 @@ data2 = pd.DataFrame({
 })
 data2
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -588,11 +551,7 @@ data2
   </tbody>
 </table>
 </div>
-
-
-
 ## Summing it all up
-
 
 ```python
 # Total of VIAF gender & predicted gender
@@ -607,9 +566,6 @@ total = pd.DataFrame({
 })
 total
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -645,28 +601,25 @@ total
 </table>
 </div>
 
-
-
-
 ```python
-mylabels = ["Female", "Male", "Unknown"]
-mycolors = ["#34595a", "#a0c293", "#f0cfc3"]
+
+#mylabels = ["Female", "Male", "Unknown"]
+#mycolors = ["#34595a", "#a0c293", "#f0cfc3"]
 
 #controls default text size
-plt.rc('font', size=15)
+#plt.rc('font', size=15)
 
 #set title font to size 50
-plt.rc('axes', titlesize=50) 
+#plt.rc('axes', titlesize=50) 
 
-plt.pie(total, 
-        labels = mylabels, 
-        autopct ='%1.1f%%',
-        colors = mycolors,
-        wedgeprops = {"edgecolor" : "black",
-                      'linewidth': 2,
-                      'antialiased': True})
+#plt.pie(total, 
+        #labels = mylabels, 
+        #autopct ='%1.1f%%',
+        #colors = mycolors,
+        #wedgeprops = {"edgecolor" : "black", 'linewidth': 2, 'antialiased': True})
+
 #plt.legend(loc='upper left')
-plt.title('Gender Gap')
+#plt.title('Gender Gap')
 
 # Save figure
 #plt.savefig('/Users/nat/Desktop/gender-gap.png', dpi = 100)
@@ -677,6 +630,4 @@ plt.title('Gender Gap')
 
 ![Gender Gap](/attachments/images/2022-02-28-Gender_Gap_Nature_History_Books.jpg) 
 
-```python
 
-```
