@@ -81,8 +81,8 @@ books.head(5)
   </tbody>
 </table>
 </div>
-```python
 
+```python
 # Fill in the NaN values to prevent future errors
 for i in range(len(books['authors'])):
     author = books['authors'][i]
@@ -94,8 +94,7 @@ for i in range(len(books['authors'])):
         books['authors'][i] = "No Author"
 
 # Before filling the NaN values the below cell was empty
-# books['authors'][854]
-
+#books['authors'][854]
 ```
 
 ## Virtual International Authority File (VIAF) Dataset
@@ -124,7 +123,6 @@ viaf_db['Name'] = viaf_db['Name'].str.replace('_',' ')
 viaf_db.drop('Unnamed: 0', axis=1, inplace=True)
 
 viaf_db.head(5)
-
 ```
 <div>
 <table border="1" class="dataframe">
@@ -204,7 +202,6 @@ for i in range(len(books['authors'])):
         names_to_predict.append(name)
         author_without_viaf.append(books['authors'][i])
         books_without_viaf.append(books['titles'][i])
-    
 ```
 
 
@@ -546,24 +543,23 @@ total
 </div>
 
 ```python
-
-#mylabels = ["Female", "Male", "Unknown"]
-#mycolors = ["#34595a", "#a0c293", "#f0cfc3"]
+mylabels = ["Female", "Male", "Unknown"]
+mycolors = ["#34595a", "#a0c293", "#f0cfc3"]
 
 #controls default text size
-#plt.rc('font', size=15)
+plt.rc('font', size=15)
 
 #set title font to size 50
-#plt.rc('axes', titlesize=50) 
+plt.rc('axes', titlesize=50) 
 
-#plt.pie(total, 
-        #labels = mylabels, 
-        #autopct ='%1.1f%%',
-        #colors = mycolors,
-        #wedgeprops = {"edgecolor" : "black", 'linewidth': 2, 'antialiased': True})
+plt.pie(total, 
+        labels = mylabels, 
+        autopct ='%1.1f%%',
+        colors = mycolors,
+        wedgeprops = {"edgecolor" : "black", 'linewidth': 2, 'antialiased': True})
 
-#plt.legend(loc='upper left')
-#plt.title('Gender Gap')
+plt.legend(loc='upper left')
+plt.title('Gender Gap')
 
 # Save figure
 #plt.savefig('/Users/nat/Desktop/gender-gap.png', dpi = 100)
