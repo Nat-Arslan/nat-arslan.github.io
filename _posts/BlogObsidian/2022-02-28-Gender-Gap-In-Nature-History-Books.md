@@ -36,14 +36,14 @@ There are personal pages for many authors in VIAF. Each page includes informatio
 The gender category for authors is binary. Check for instance one of my favorite non-binary authors page, [Annalee Newitz]( http://viaf.org/viaf/16492757/#Newitz,_Annalee,_1969-....). Annalee is categorised as "Female". So here is a shout out to VIAF:
 > Please update your database to include more than two gender! 
 
-...
+
 (Not that anyone will here me from this tiny blog buuut....🤨. Yeap, my rant is finished now. Moving on.) 
-...
+
 
 **Where to download?**
 I downloaded their date (access [here](http://viaf.org/viaf/data/ ) ). The txt.gz file is 1,33 GB and when its unzipped the csv file is 9,37 GB. In another notebook I simplified this file by getting the rows that only contained "en.wikipedia.org" as a string. Because most authors have a wikipedia page. 
 
-This method ofcourse has limitations such as eliminating authors that doesnt have a wikipedi page or who has it but is in another language. ==So this can and should be improved.== But at least this way I deacresed the file size (from ~ 9 GB) to ~ 94 MB.
+This method ofcourse has limitations such as eliminating authors that doesnt have a wikipedi page or who has it but is in another language. So this can and should be improved. But at least this way I deacresed the file size (from ~ 9 GB) to ~ 94 MB.
 
 ## 3. Finding the Nature History Writers
 There are many book retailer webpages with decent categorisarion of millions of books. So
