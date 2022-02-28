@@ -29,19 +29,6 @@ books.head(5)
 ```
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -98,6 +85,7 @@ books.head(5)
 </table>
 </div>
 ```python
+
 # Fill in the NaN values to prevent future errors
 for i in range(len(books['authors'])):
     author = books['authors'][i]
@@ -110,6 +98,7 @@ for i in range(len(books['authors'])):
 
 # Before filling the NaN values the below cell was empty
 # books['authors'][854]
+
 ```
 
 ## Virtual International Authority File (VIAF) Dataset
@@ -141,19 +130,6 @@ viaf_db.head(5)
 
 ```
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -231,9 +207,6 @@ for i in range(len(books['authors'])):
         names_to_predict.append(name)
         author_without_viaf.append(books['authors'][i])
         books_without_viaf.append(books['titles'][i])
-
-print("Cross checking finished. If a VIAF link exists for an author it was saved in the list.")
-    
     
 ```
 
@@ -429,19 +402,6 @@ predict_authors.head(5)
 ```
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -568,19 +528,6 @@ total
 ```
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
