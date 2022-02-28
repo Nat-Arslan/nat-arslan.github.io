@@ -12,13 +12,6 @@ image:
   alt: an image of an open book
 ---
 
-```python
-import requests
-import pandas as pd
-import datetime
-from bs4 import BeautifulSoup
-```
-
 ## 1. About This Project
 
 I try to read books on nature, nature history and popular science as much as I can. Then I wondered is there a gender gap in the amount of published books in these fields. I became curious about the percentage of women, trans and non-binary nature history writers. I found some good articles about gender gap in publishing. Especially [this](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2004956) research on gender gap in academia and its [webpage](https://lukeholman.github.io/genderGap/) is worth looking.
@@ -74,6 +67,12 @@ However it's difficult to fully rely on these results. There are numerous things
 
 ## 6. Code 
 ### Bookdepositort Dataset
+```python
+import requests
+import pandas as pd
+import datetime
+from bs4 import BeautifulSoup
+```
 
 ```python
 # Import Bookdepository CSV
