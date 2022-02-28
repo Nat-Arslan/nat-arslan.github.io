@@ -669,10 +669,10 @@ plt.pie(total,
 plt.title('Gender Gap')
 
 # Save figure
-plt.savefig('/Users/nat/Desktop/gender-gap.png', dpi = 100)
+#plt.savefig('/Users/nat/Desktop/gender-gap.png', dpi = 100)
 
 # Display the graph onto the screen
-plt.show() 
+#plt.show() 
 ```
 
 ![Gender Gap](/attachments/images/2022-02-28-Gender_Gap_Nature_History_Books.jpg) 
