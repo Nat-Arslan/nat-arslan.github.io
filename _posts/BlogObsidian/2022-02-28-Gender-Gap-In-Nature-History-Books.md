@@ -5,6 +5,11 @@ categories: [code]
 tags: [gender, books, nature-history, python] 
 toc: true
 comments: false
+image:
+	src: /attachments/images/ben-white-W8Qqn1PmQH0-unsplash.jpg
+	width: 1000   # in pixels
+	height: 400   # in pixels
+	alt: an image of an open book
 ---
 
 ```python
