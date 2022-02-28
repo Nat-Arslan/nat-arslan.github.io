@@ -20,7 +20,7 @@ I try to read books on nature, nature history and popular science as much as I c
 There are some services that libraries can use like Novelist (which is a division of EBSCO now) that provides detailed information about books and their authors. In 2020 Novelist broadened their database to include trans and non-binary to their database (Reno, 2020). This service is available in Novelist Plus but my university is not subscribed to that. So is there another database for author gender identities? Enters VIAF.
 
 ### 2.1 What is VIAF?
-You can read more about VIAF [here](https://en.wikipedia.org/wiki/Virtual_International_Authority_File). It is a database that combines information from multiple authorities inclusing libraries.
+You can read more about VIAF [here](https://en.wikipedia.org/wiki/Virtual_International_Authority_File). It is a database that combines information from multiple authorities including libraries.
 
 **Why I use it?**
 There are personal pages for many authors in VIAF. Each page includes information about the authors' publication and personal data, including their gender. Check Urusla K. Le Guin's page [here](http://viaf.org/viaf/101734435/#Le_Guin,_Ursula_K.,_1929-2018) for example.
@@ -34,22 +34,22 @@ The gender category for authors is binary. Check for instance one of my favorite
 
 
 **Where to download?**
-I downloaded their date (access [here](http://viaf.org/viaf/data/ ) ). The txt.gz file is 1,33 GB and when its unzipped the csv file is 9,37 GB. In another notebook I simplified this file by getting the rows that only contained "en.wikipedia.org" as a string. Because most authors have a wikipedia page. 
+I downloaded their date (access [here](http://viaf.org/viaf/data/ ) ). The unzipped "txt.gz" file is 9,37 GB.  When I observed the VIAF dataset, I realised that most contemporary writers had a wikipedia page. So I eliminated all the rows that didn't include a wiki link. 
 
-This method ofcourse has limitations such as eliminating authors that doesnt have a wikipedi page or who has it but is in another language. So this can and should be improved. But at least this way I deacresed the file size (from ~ 9 GB) to ~ 94 MB.
+Obviously a problematic approach as there might be many authors in my dataset without a wiki page. But nevertheless this helped me to deacresed the file size from ~ 9 GB to ~ 94 MB. 
 
 ## 3. Finding the Nature History Writers
 There are many book retailer webpages with decent categorisarion of millions of books. So
 creating a book dataset with author names and book titles is relatively easy. I used [Book Depository](https://www.bookdepository.com/category/2985/Natural-History/browse/viewmode/all?page=2) and scraped its pages with python. 
 
-They have a category called  "Natural History" perfect. I fetched all the books under this category. The result was ~ 10,000 books with titles, authors and publishing year. I filtered the result to only get the natural history books that were published between "2021 - Present" which yielded ~ 12,500 books. 
+They have a category called  "Natural History". Perfect. I fetched all the books under this category. The result was ~ 10,000 books with titles, authors and publishing year. I filtered the result to only get the natural history books that were published between "2021 - Present" which yielded ~ 1,230 books. 
 
 There are no gender identity information for authors in Book Depository nor in similar platforms. And this is why I need VIAF dataset.
 
 ## 4. Code Workflow
 - Import & edit the Book Depository data
 - Import & edit the VIAF data
-- Cross check and match if an author listed in the Book Depository data exists in VIAF data.
+- Cross check and match if an author listed in the Book Depository data exists in VIAF dataset.
 - If yes: Go to authors page and get their gender info
 - If no:  Try to predict the authors' gender from their first name by using Natural Language Toolkit
 - Summarise the findings
