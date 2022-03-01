@@ -40,7 +40,12 @@ I downloaded their date (access [here](http://viaf.org/viaf/data/ ) ). The unzip
 
 Obviously a problematic approach as there might be many authors in my dataset without a wiki page. But nevertheless this helped me to decreased the file size from ~ 9 GB to ~ 235 MB. 
 
-## 3. Finding the Nature History Writers
+## 3. What if VIAF doesnt have the author's gender?
+Then I can use Natural Language Toolkit to predict the authors' gender from their first name. The prediction is, yes you guessed it, of course binary. 
+
+Personal Note: I would like to understand how the text training and prediction is happening in Natural Language Toolkit #curious
+
+## 4. Finding the Nature History Writers
 There are many book retailer webpages with decent categorisation of millions of books. So
 creating a book dataset with author names and book titles is relatively easy. I used [Book Depository](https://www.bookdepository.com/category/2985/Natural-History/browse/viewmode/all?page=2) and scraped its pages with python. 
 
@@ -48,7 +53,7 @@ They have a category called  "Natural History". Perfect. I fetched all the books
 
 There are no gender identity information for authors in Book Depository nor in similar platforms. And this is why I need VIAF dataset.
 
-## 4. Code Workflow
+## 5. Code Workflow
 - Import Book Depository data
 - Import VIAF data
 - Cross check and match if an author listed in the Book Depository data exists in VIAF dataset.
@@ -56,12 +61,12 @@ There are no gender identity information for authors in Book Depository nor in s
 - If no:  Try to predict the authors' gender from their first name by using Natural Language Toolkit
 - Summarise the findings
 
-## 5. Result
+## 6. Result
 - There are 982 books published in 2021 within "Nature History" category.
 - I retrieved the author gender of~ 32% of these books from VIAF page.
 - For the remaining ~68% of the books/authors I used Natural Language Processing to predict their gender from their first names.
 - This method couldn't define gender of 15% of the authors .
-- The results show (excluding the undetermined authors) that 6 out of 10 natural history books that were published after 2021 are written by male authors. 
+- The results show (excluding the undetermined authors) that 6 out of 10 natural history books that were published during 2021 are written by male authors. 
 
 However it's difficult to fully rely on these results. There are numerous things to improve in this project besides finding a database with broader gender identities. These are:
 - Re-consider the use of VIAF database. Just to find gender data for ~30% of the authors the project processing time increases dramatically.
