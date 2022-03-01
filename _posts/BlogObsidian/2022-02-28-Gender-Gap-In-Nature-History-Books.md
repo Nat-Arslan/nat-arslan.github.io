@@ -36,37 +36,37 @@ The gender category for authors is binary. Check for instance one of my favorite
 **Where to download?**
 I downloaded their date (access [here](http://viaf.org/viaf/data/ ) ). The unzipped "txt.gz" file is 9,37 GB.  When I observed the VIAF dataset, I realised that most contemporary writers had a wikipedia page. So I eliminated all the rows that didn't include a wiki link. 
 
-Obviously a problematic approach as there might be many authors in my dataset without a wiki page. But nevertheless this helped me to deacresed the file size from ~ 9 GB to ~ 94 MB. 
+Obviously a problematic approach as there might be many authors in my dataset without a wiki page. But nevertheless this helped me to decreased the file size from ~ 9 GB to ~ 235 MB. 
 
 ## 3. Finding the Nature History Writers
-There are many book retailer webpages with decent categorisarion of millions of books. So
+There are many book retailer webpages with decent categorisation of millions of books. So
 creating a book dataset with author names and book titles is relatively easy. I used [Book Depository](https://www.bookdepository.com/category/2985/Natural-History/browse/viewmode/all?page=2) and scraped its pages with python. 
 
-They have a category called  "Natural History". Perfect. I fetched all the books under this category. The result was ~ 10,000 books with titles, authors and publishing year. I filtered the result to only get the natural history books that were published between "2021 - Present" which yielded ~ 1,230 books. 
+They have a category called  "Natural History". Perfect. I fetched all the books under this category. The result was ~ 10,000 books with titles, authors and publishing year. I filtered the result to get the books published for each year. 
 
 There are no gender identity information for authors in Book Depository nor in similar platforms. And this is why I need VIAF dataset.
 
 ## 4. Code Workflow
-- Import & edit the Book Depository data
-- Import & edit the VIAF data
+- Import Book Depository data
+- Import VIAF data
 - Cross check and match if an author listed in the Book Depository data exists in VIAF dataset.
 - If yes: Go to authors page and get their gender info
 - If no:  Try to predict the authors' gender from their first name by using Natural Language Toolkit
 - Summarise the findings
 
 ## 5. Result
-- There are 1230 books published from 2021 until now within "Nature History" category.
-- I retrieved the author gender of~ 37% of these books from VIAF page.
-- For the remaining ~63% of the books/authors I used Natural Language Processing to predict their gender from their first names.
-- The results show that 6 out of 10 natural histoy books that were published after 2021 are written by male authors. 
+- There are 982 books published in 2021 within "Nature History" category.
+- I retrieved the author gender of~ 32% of these books from VIAF page.
+- For the remaining ~68% of the books/authors I used Natural Language Processing to predict their gender from their first names.
+- This method couldn't define gender of 15% of the authors .
+- The results show (excluding the undetermined authors) that 6 out of 10 natural history books that were published after 2021 are written by male authors. 
 
 However it's difficult to fully rely on these results. There are numerous things to improve in this project besides finding a database with broader gender identities. These are:
-- Find a better way to systematically access authors' VIAF pages
-- Perhaps, eliminating VIAF and simply relying on gender prediction can simplify the project
+- Re-consider the use of VIAF database. Just to find gender data for ~30% of the authors the project processing time increases dramatically.
 - Improving the Natural Language Toolkit (NTLK) results to increase the binary-gender prediction accuracy
 
 ## 6. Code 
-### Bookdepositort Dataset
+
 ```python
 import requests
 import pandas as pd
@@ -74,11 +74,15 @@ import datetime
 from bs4 import BeautifulSoup
 ```
 
+### Bookdepository Dataset
+This dataset is a result of webscraping. I fetched books that were published under natural history category in bookdepository [webpage](https://www.bookdepository.com/category/2985/Natural-History/browse/viewmode/all?page=1). The result was ~ 10,000 books with titles, authors and publishing year. I filtered this data and retrieved the natural history books for each year between 2015 and 2021. In this project I will check only the books published 2021 = 982 books.
+
 ```python
 # Import Bookdepository CSV
-books = pd.read_csv(".../NaturalHistory-Bookdepository-2021.csv", dtype=str)
+books = pd.read_csv("/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Bookdepository/NaturalHistory-Bookdepository-2021.csv", dtype=str)
 books.head(5)
 ```
+
 
 <div>
 <table border="1" class="dataframe">
@@ -127,7 +131,7 @@ books.head(5)
     </tr>
     <tr>
       <th>4</th>
-      <td>60</td>
+      <td>62</td>
       <td>James Stewart</td>
       <td>Dinosaur Therapy</td>
       <td>24 Aug 2021</td>
@@ -137,40 +141,25 @@ books.head(5)
 </table>
 </div>
 
-```python
-# Fill in the NaN values to prevent future errors
-for i in range(len(books['authors'])):
-    author = books['authors'][i]
-    boolean = pd.isna(author) # true or false
-    
-    if boolean == False:
-        books['authors'][i] = books['authors'][i]
-    else:
-        books['authors'][i] = "No Author"
-
-# Before filling the NaN values the below cell was empty
-#books['authors'][854]
-```
-
 ### Virtual International Authority File (VIAF) Dataset
 
-```python
-# Import VIAF CSV
-viaf_db = pd.read_csv(".../viaf-simple.csv", dtype=str)
+This is the dataset downloaded from [here](http://viaf.org/viaf/data/). The unzipped file is 9,37 GB. In another notebook I simplified this file by getting the rows that only contained wikipedia pages. Because most authors have a wikipedia page. This way the file size decreased to ~ 235MB.
 
-# Get the name of the person from the Wiki links
-viaf_db['Name'] = viaf_db['info'].str.split('wiki/').str[1]
-viaf_db['Name'] = viaf_db['Name'].str.split('_\(').str[0]
-viaf_db['Name'] = viaf_db['Name'].str.replace('_',' ')
-viaf_db.drop('Unnamed: 0', axis=1, inplace=True)
+
+```python
+# Import VIAF CSV (I changed the way I edited VIAF file. This is the 2nd version)
+viaf_db = pd.read_csv("/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Viaf/Viaf-simple.csv", dtype=str)
 
 viaf_db.head(5)
+
 ```
+
 <div>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>Unnamed: 0</th>
       <th>viaf</th>
       <th>info</th>
       <th>Name</th>
@@ -179,40 +168,51 @@ viaf_db.head(5)
   <tbody>
     <tr>
       <th>0</th>
-      <td>http://viaf.org/viaf/100177876</td>
-      <td>Wikipedia@https://en.wikipedia.org/wiki/Guilla...</td>
-      <td>Guillaume Caoursin</td>
+      <td>11</td>
+      <td>http://viaf.org/viaf/10001407</td>
+      <td>Wikipedia@https://cs.wikipedia.org/wiki/Pavel_...</td>
+      <td>Pavel Hrach</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>http://viaf.org/viaf/100208187</td>
-      <td>Wikipedia@https://en.wikipedia.org/wiki/César-...</td>
-      <td>César-Pierre Richelet</td>
+      <td>70</td>
+      <td>http://viaf.org/viaf/100109330</td>
+      <td>Wikipedia@https://fr.wikipedia.org/wiki/Emile_...</td>
+      <td>Emile de Meester de Ravestein</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>http://viaf.org/viaf/100232568</td>
-      <td>Wikipedia@https://en.wikipedia.org/wiki/Paul_B...</td>
-      <td>Paul B. Weisz</td>
+      <td>121</td>
+      <td>http://viaf.org/viaf/100144403</td>
+      <td>Wikipedia@https://cy.wikipedia.org/wiki/Teresa...</td>
+      <td>Teresa Magalhães</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>http://viaf.org/viaf/100232612</td>
-      <td>Wikipedia@https://en.wikipedia.org/wiki/Paul_B...</td>
-      <td>Paul B. Thompson</td>
+      <td>246</td>
+      <td>http://viaf.org/viaf/100177876</td>
+      <td>Wikipedia@https://nl.wikipedia.org/wiki/Guilla...</td>
+      <td>Guillaume Caoursin</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>http://viaf.org/viaf/100319661</td>
-      <td>Wikipedia@https://en.wikipedia.org/wiki/John_G...</td>
-      <td>John Gosling</td>
+      <td>331</td>
+      <td>http://viaf.org/viaf/100208187</td>
+      <td>Wikipedia@https://ru.wikipedia.org/wiki/Ришле,...</td>
+      <td>Ришле, Сезар-Пьер</td>
     </tr>
   </tbody>
 </table>
 </div>
+
+
+
 ### Check VIAF links by using the Bookdepository author names
 
 So VIAF file may contain many people and not necesseraly only authors. But we already have our author names from bookdepository. All we need to do is to cross check and link the book depository authors to their VIAF pages (if it exists). 
+
+Note: The blow process takes a long time. Grab a coffee : )
+
 
 ```python
 links = []
@@ -227,7 +227,8 @@ for i in range(len(books['authors'])):
     
     # Find whether the name in bookdeposit dataset exists in VIAF dataset
     name = books['authors'][i]
-    #print(i, name)
+    #print(i)
+    
     boolean_finding = viaf_db['Name'].str.contains(name, case=False).any() # True or False
     
     # If its true get the viaf link
@@ -244,6 +245,10 @@ for i in range(len(books['authors'])):
         names_to_predict.append(name)
         author_without_viaf.append(books['authors'][i])
         books_without_viaf.append(books['titles'][i])
+
+print("Cross checking finished. If a VIAF link exists for an author it was saved in the list.")
+    
+    
 ```
 
 
@@ -257,8 +262,10 @@ viaf_authors = pd.DataFrame(zipped1, columns=['Author', 'Book', 'Links'])
 predict_authors = pd.DataFrame(zipped2, columns=['Author', 'Book', 'Names'])
 
 # storing these dataframes in a csv file
-viaf_authors.to_csv(r'.../viaf_author_links.csv') #, index = None
-predict_authors.to_csv(r'.../author_names_to_predict.csv') 
+viaf_authors.to_csv(r'/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Viaf/Viaf-author-links-2021.csv') #, index = None
+predict_authors.to_csv(r'/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Viaf/Author_names_to_predict-2021.csv') 
+
+
 ```
 
 
@@ -266,28 +273,88 @@ predict_authors.to_csv(r'.../author_names_to_predict.csv')
 b = len(books)
 v = len(viaf_authors)
 p = len(predict_authors)
-print("There are {} books published from 2021 until now within Nature History category. This code managed to link {} of these book authors to their personal VIAF pages from which we will retrieve author gender information. We need to predict the gender for the remaining {} authors.".format(b,v,p))
+print("There are {} books published in 2021 within Nature History category. This code managed to link {} of these book authors to their personal VIAF pages from which we will retrieve author gender information. We need to predict the gender for the remaining {} authors.".format(b,v,p))
 
 ```
 
-There are 1230 books published from 2021 until now within Nature History category that are in bookdepository. This code managed to link 457 of these book authors to their personal VIAF pages from which we will retrieve author gender information. We need to predict the gender for the remaining 773 authors. 
+There are 982 books published in 2021 within Nature History category. This code managed to link 311 of these book authors to their personal VIAF pages from which we will retrieve author gender information. We need to predict the gender for the remaining 671 authors.
 
-In other words with this method we accessed ~ 37% of the authors gender data from VIAF page. For the remaining ~63% of the authors we need to use Natural Language Processing to predict their gender from their first names.
 
 ### Fetching gender data from VIAF pages with Beautifulsoup 
 
+
 ```python
 # Import CSV
-viaf_authors = pd.read_csv(".../viaf_author_links.csv", dtype=str)
+viaf_authors = pd.read_csv("/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Viaf/Viaf-author-links-2021.csv", dtype=str)
+
 # Create an empty column for gender
 viaf_authors["Gender"] = ""
+
+# Drop unnecessary columns
+viaf_authors.drop('Unnamed: 0', axis=1, inplace=True)
+
 viaf_authors.head(5)
 ```
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Author</th>
+      <th>Book</th>
+      <th>Links</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Merlin Sheldrake</td>
+      <td>Entangled Life</td>
+      <td>http://viaf.org/viaf/31157340763509922488</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Jeremy Clarkson</td>
+      <td>Diddly Squat</td>
+      <td>http://viaf.org/viaf/102195935</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>James Stewart</td>
+      <td>Dinosaur Therapy</td>
+      <td>http://viaf.org/viaf/121702213</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>James Rebanks</td>
+      <td>English Pastoral</td>
+      <td>http://viaf.org/viaf/311766886</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Raynor Winn</td>
+      <td>The Wild Silence</td>
+      <td>http://viaf.org/viaf/74154921352863592450</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
 
 ```python
 
 for i in range(len(viaf_authors)):
     name = viaf_authors["Author"][i]
+    #print(i)
     
     url = viaf_authors['Links'][i]
     response = requests.get(url)
@@ -320,16 +387,74 @@ for i in range(len(viaf_authors)):
 
 ```
 
+
 ```python
 # Export to CSV 
-viaf_authors.to_csv('.../Viaf_authors_gender.csv')
+viaf_authors.to_csv('/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Viaf/Viaf-authors-gender-2021.csv')
 
 # Import CSV
-authors = pd.read_csv(".../Viaf_authors_gender.csv", dtype=str)
+authors = pd.read_csv("/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Viaf/Viaf-authors-gender-2021.csv", dtype=str)
+
+# Drop unnecessary columns
+authors.drop('Unnamed: 0', axis=1, inplace=True)
+
 authors.head(5)
 ```
 
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Author</th>
+      <th>Book</th>
+      <th>Links</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Merlin Sheldrake</td>
+      <td>Entangled Life</td>
+      <td>http://viaf.org/viaf/31157340763509922488</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Jeremy Clarkson</td>
+      <td>Diddly Squat</td>
+      <td>http://viaf.org/viaf/102195935</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>James Stewart</td>
+      <td>Dinosaur Therapy</td>
+      <td>http://viaf.org/viaf/121702213</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>James Rebanks</td>
+      <td>English Pastoral</td>
+      <td>http://viaf.org/viaf/311766886</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Raynor Winn</td>
+      <td>The Wild Silence</td>
+      <td>http://viaf.org/viaf/74154921352863592450</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 ### Statistics (VIAF)
+
+
 ```python
 f1 = authors['Gender'].value_counts()['Female'] # 113 <class 'numpy.int64'>
 m1 = authors['Gender'].value_counts()['Male'] # 202
@@ -343,11 +468,31 @@ data1 = pd.DataFrame({
 data1
 ```
 
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>female</th>
+      <th>male</th>
+      <th>unknown</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>106</td>
+      <td>175</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 ### Predicting gender from first name by using Natural Language Processing
 
-For those bookdepository author names that didnt match with any VIAF data, we can use NLTK to train and predict the binary gender of the authors from their first names. 
+For those Book Depository author names that didn't match with any VIAF data we can use NLTK to train and predict the binary gender of the authors from their first names. 
 
-Of course the method is problematic. Not just because it predicts and assigns the wrong  gender to authors' first name but also because of the binary gender assumption. In this method there is no room for non-bianry and trans people. I tested the trained NLTK with my name and with 80% accuracy the code said I was a male. Well ... I'm not. 
+Of course the method is problematic. Not just because it predicts and assigns the wrong  gender to authors' first name but also because of the binary gender assumption. In this method there is no room for non-binary and trans people. I tested the trained NLTK with my name and with 80% accuracy the code said I was a male. Well, I'm not. 
 
 ```python
 # Source: https://www.geeksforgeeks.org/python-gender-identification-by-name-using-nltk/
@@ -357,9 +502,10 @@ from nltk.corpus import names
 import nltk
 ```
 
+
 ```python
 # Import CSV
-predict_authors = pd.read_csv(".../author_names_to_predict.csv", dtype=str)
+predict_authors = pd.read_csv("/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Viaf/Author_names_to_predict-2021.csv", dtype=str)
 
 # Create a colum for first names
 predict_authors["FirstName"] = ""
@@ -368,8 +514,69 @@ predict_authors['FirstName'] = predict_authors['Names'].str.split(' ', expand=Tr
 # Create an empty column for gender
 predict_authors["Gender"] = ""
 
+# Drop unnecessary columns
+predict_authors.drop('Unnamed: 0', axis=1, inplace=True)
+
 predict_authors.head(5)
 ```
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Author</th>
+      <th>Book</th>
+      <th>Names</th>
+      <th>FirstName</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Lia Leendertz</td>
+      <td>The Almanac</td>
+      <td>Lia Leendertz</td>
+      <td>Lia</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sosuke Natsukawa</td>
+      <td>The Cat Who Saved Books</td>
+      <td>Sosuke Natsukawa</td>
+      <td>Sosuke</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Lelia Wanick Salgado</td>
+      <td>Sebastiao Salgado. GENESIS</td>
+      <td>Lelia Wanick Salgado</td>
+      <td>Lelia</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Rodney Habib</td>
+      <td>The Forever Dog</td>
+      <td>Rodney Habib</td>
+      <td>Rodney</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Andrew Cotter</td>
+      <td>Dog Days</td>
+      <td>Andrew Cotter</td>
+      <td>Andrew</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 ```python
 import random
@@ -385,8 +592,8 @@ def gender_features(word):
 #labeled_names = ([(name, 'Female') for name in names.words('/Users/nat/Desktop/FemaleMix.rtf')]+
              #[(name, 'Male') for name in names.words('/Users/nat/Desktop/MaleMix.rtf')]) # 133 f
 
-labeled_names = ([(name, 'Female') for name in names.words('/Users/nat/Desktop/female.txt')]+
-             [(name, 'Male') for name in names.words('/Users/nat/Desktop/male.txt')])
+labeled_names = ([(name, 'Female') for name in names.words('/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Names/female.txt')]+
+             [(name, 'Male') for name in names.words('/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Names/male.txt')])
 
 random.shuffle(labeled_names)
 
@@ -413,7 +620,7 @@ for i in range(len(predict_authors)): #iterate over rows
     #print(name)
     
     # If the name is in the database check gender
-    if name in open('/Users/nat/Desktop/Allnames').read():
+    if name in open('/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Names/Allnames').read():
         gender = classifier.classify(gender_features(name))
         predict_authors["Gender"][i] = str(gender)
         #print(gender)
@@ -442,7 +649,6 @@ predict_authors.head(5)
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Unnamed: 0</th>
       <th>Author</th>
       <th>Book</th>
       <th>Names</th>
@@ -453,7 +659,6 @@ predict_authors.head(5)
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
       <td>Lia Leendertz</td>
       <td>The Almanac</td>
       <td>Lia Leendertz</td>
@@ -462,7 +667,6 @@ predict_authors.head(5)
     </tr>
     <tr>
       <th>1</th>
-      <td>1</td>
       <td>Sosuke Natsukawa</td>
       <td>The Cat Who Saved Books</td>
       <td>Sosuke Natsukawa</td>
@@ -471,7 +675,6 @@ predict_authors.head(5)
     </tr>
     <tr>
       <th>2</th>
-      <td>2</td>
       <td>Lelia Wanick Salgado</td>
       <td>Sebastiao Salgado. GENESIS</td>
       <td>Lelia Wanick Salgado</td>
@@ -480,7 +683,6 @@ predict_authors.head(5)
     </tr>
     <tr>
       <th>3</th>
-      <td>3</td>
       <td>Rodney Habib</td>
       <td>The Forever Dog</td>
       <td>Rodney Habib</td>
@@ -489,7 +691,6 @@ predict_authors.head(5)
     </tr>
     <tr>
       <th>4</th>
-      <td>4</td>
       <td>Andrew Cotter</td>
       <td>Dog Days</td>
       <td>Andrew Cotter</td>
@@ -501,6 +702,8 @@ predict_authors.head(5)
 </div>
 
 ### Statistics (NTLK)
+
+
 ```python
 f2 = predict_authors['Gender'].value_counts()['Female'] # 133 OR 186
 m2 = predict_authors['Gender'].value_counts()['Male'] # 296
@@ -515,19 +718,6 @@ data2
 ```
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -540,14 +730,15 @@ data2
   <tbody>
     <tr>
       <th>0</th>
-      <td>277</td>
-      <td>362</td>
-      <td>134</td>
+      <td>247</td>
+      <td>311</td>
+      <td>113</td>
     </tr>
   </tbody>
 </table>
 </div>
 ### Summing it all up
+
 
 ```python
 # Total of VIAF gender & predicted gender
@@ -555,12 +746,18 @@ total_f = f1 + f2
 total_m = m1 + m2
 total_u = u1 + u2
 
-total = pd.DataFrame({
+total_with_unknown = pd.DataFrame({
     'Female': [total_f],
     'Male': [total_m],
     'Unknown': [total_u]
 })
-total
+
+total_without_unknown = pd.DataFrame({
+    'Female': [total_f],
+    'Male': [total_m]
+})
+
+total_without_unknown
 ```
 
 <div>
@@ -570,51 +767,98 @@ total
       <th></th>
       <th>Female</th>
       <th>Male</th>
-      <th>Unknown</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>429</td>
-      <td>626</td>
-      <td>175</td>
+      <td>353</td>
+      <td>486</td>
     </tr>
   </tbody>
 </table>
 </div>
 
+### Plots
+Lets plot the results with and without the unknown gender.
+
+
+![Gender Gap](/attachments/images/2022-02-28-Gender_Gap_Nature_History_Books1.jpg) 
+
+![Gender Gap](/attachments/images/2022-02-28-Gender_Gap_Nature_History_Books2.jpg) 
+
+
 ```python
-mylabels = ["Female", "Male", "Unknown"]
-mycolors = ["#34595a", "#a0c293", "#f0cfc3"]
+from matplotlib import pyplot as plt
+
+mylabels = ["Female", "Male"]
+mycolors = ["#34595a", "#a0c293"]
 
 #controls default text size
 plt.rc('font', size=15)
 
+# plot size
+plt.rcParams["figure.figsize"] = [10, 15]
+
 #set title font to size 50
 plt.rc('axes', titlesize=50) 
 
-plt.pie(total, 
+plt.pie(total_without_unknown, 
         labels = mylabels, 
         autopct ='%1.1f%%',
         colors = mycolors,
-        wedgeprops = {"edgecolor" : "black", 'linewidth': 2, 'antialiased': True})
-
-plt.legend(loc='upper left')
+        wedgeprops = {"edgecolor" : "black",
+                      'linewidth': 2,
+                      'antialiased': True})
+#plt.legend(loc='upper left')
 plt.title('Gender Gap')
 
 # Save figure
-#plt.savefig('/Users/nat/Desktop/gender-gap.png', dpi = 100)
+plt.savefig('/Users/nat/Desktop/gender-gap.png', dpi = 100)
 
 # Display the graph onto the screen
-#plt.show() 
+plt.show() 
 ```
 
-![Gender Gap](/attachments/images/2022-02-28-Gender_Gap_Nature_History_Books.jpg) 
 
+```python
+fig = plt.figure()
 
+mylabels1 = ["Female", "Male", "Unknown"]
+mycolors1 = ["#34595a", "#a0c293", "#f0cfc3"]
+
+mylabels2 = ["Female", "Male"]
+mycolors2 = ["#34595a", "#a0c293"]
+
+ax1 = fig.add_axes([0, 0, .5, .5], aspect=1)
+ax1.pie(total_with_unknown, 
+        labels=mylabels1, 
+        radius = 1.2,
+        autopct ='%1.1f%%',
+        colors = mycolors1,
+        wedgeprops = {"edgecolor" : "black",
+                      'linewidth': 2,
+                      'antialiased': True})
+
+ax2 = fig.add_axes([.5, .0, .5, .5], aspect=1)
+ax2.pie(total_without_unknown, 
+        labels=mylabels2, 
+        radius = 1.2,
+        autopct ='%1.1f%%',
+        colors = mycolors2,
+        wedgeprops = {"edgecolor" : "black",
+                      'linewidth': 2,
+                      'antialiased': True})
+
+ax1.set_title('Gender Gap')
+#ax2.set_title('Title for ax2')
+plt.show()
+```
 
 ## References
 Reno, A. (2020) _Author gender identity added to NoveList_, EBSCO Information Services, Inc. Available at: [https://www.ebsco.com/blogs/novelist/author-gender-identity-added-novelist](https://www.ebsco.com/blogs/novelist/author-gender-identity-added-novelist) (Accessed: 25 February 2022).
 
 ## Linked Sources
+Web scraping Book Depository Webpage [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/1-Web-Scraping-BookDepository.ipynb)
+How to work with 10GB VIAF dataset [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/2-Working-With-Downloaded-VIAF-Dataset.ipynb)
+Get Gender Information From a Persons' VIAF page [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/3-Get-Gender-Info-From-VIAF-Webpage.ipynb)
