@@ -782,9 +782,6 @@ total_without_unknown
 ### Plots
 Lets plot the results with and without the unknown gender.
 
-
-![Gender Gap](/attachments/images/2022-02-28-Gender_Gap_Nature_History_Books1.jpg) 
-
 ![Gender Gap](/attachments/images/2022-02-28-Gender_Gap_Nature_History_Books2.jpg) 
 
 
@@ -859,6 +856,6 @@ plt.show()
 Reno, A. (2020) _Author gender identity added to NoveList_, EBSCO Information Services, Inc. Available at: [https://www.ebsco.com/blogs/novelist/author-gender-identity-added-novelist](https://www.ebsco.com/blogs/novelist/author-gender-identity-added-novelist) (Accessed: 25 February 2022).
 
 ## Linked Sources
-Web scraping Book Depository Webpage [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/1-Web-Scraping-BookDepository.ipynb)
-How to work with 10GB VIAF dataset [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/2-Working-With-Downloaded-VIAF-Dataset.ipynb)
-Get Gender Information From a Persons' VIAF page [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/3-Get-Gender-Info-From-VIAF-Webpage.ipynb)
+1. Web scraping Book Depository Webpage [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/1-Web-Scraping-BookDepository.ipynb)
+2. How to work with 10GB VIAF dataset [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/2-Working-With-Downloaded-VIAF-Dataset.ipynb)
+3. Get Gender Information From a Persons' VIAF page [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/3-Get-Gender-Info-From-VIAF-Webpage.ipynb)
