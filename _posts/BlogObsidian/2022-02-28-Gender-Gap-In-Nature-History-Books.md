@@ -11,10 +11,14 @@ image:
   height: 400   # in pixels
   alt: an image of an open book
 ---
+## 0. What I Learned?
+- There are very few database that has authors' gender identity
+- The freely accessible database VIAF has binary gender system
+- Using VIAF and retrieving authors' gender **significantly** slowed down the project processing time
+- Despite possible lower accuracy it might be worth to only use Natural Language Toolkit and predict authors' (binary) gender from their first names
 
 ## 1. About This Project
-
-I try to read books on nature, nature history and popular science as much as I can. Then I wondered is there a gender gap in the amount of published books in these fields. I became curious about the percentage of women, trans and non-binary nature history writers. I found some good articles about gender gap in publishing. Especially [this](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2004956) research on gender gap in academia and its [webpage](https://lukeholman.github.io/genderGap/) is worth looking.
+I try to read books on nature, nature history and popular science as much as I can. Then I wondered is there a gender gap in the amount of published books in these fields. I became curious about the percentage of women, trans and non-binary nature history writers. I found some good articles about gender gap in publishing. In her visual article in The Pudding Rosie Cima (2017) analyses the the gender balance of The New York Times best seller list. [This](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2004956) research on gender gap in academia (Holman, Stuart-Fox and Hauser, 2018) and its interactive [webpage](https://lukeholman.github.io/genderGap/) is also worth looking. Of course, in all these resources gender is binary.
 
 ## 2. Is there a place to find information on authors' gender identity?
 There are some services that libraries can use like Novelist (which is a division of EBSCO now) that provides detailed information about books and their authors. In 2020 Novelist broadened their database to include trans and non-binary to their database (Reno, 2020). This service is available in Novelist Plus but my university is not subscribed to that. So is there another database for author gender identities? Enters VIAF.
@@ -29,9 +33,7 @@ There are personal pages for many authors in VIAF. Each page includes informatio
 The gender category for authors is binary. Check for instance one of my favorite non-binary authors page, [Annalee Newitz]( http://viaf.org/viaf/16492757/#Newitz,_Annalee,_1969-....). Annalee is categorised as "Female". So here is a shout out to VIAF:
 > Please update your database to include more than two gender! 
 
-
 (Not that anyone will here me from this tiny blog buuut....🤨. Yeap, my rant is finished now. Moving on.) 
-
 
 **Where to download?**
 I downloaded their date (access [here](http://viaf.org/viaf/data/ ) ). The unzipped "txt.gz" file is 9,37 GB.  When I observed the VIAF dataset, I realised that most contemporary writers had a wikipedia page. So I eliminated all the rows that didn't include a wiki link. 
@@ -209,7 +211,7 @@ viaf_db.head(5)
 
 ### Check VIAF links by using the Bookdepository author names
 
-So VIAF file may contain many people and not necesseraly only authors. But we already have our author names from bookdepository. All we need to do is to cross check and link the book depository authors to their VIAF pages (if it exists). 
+All we need to do is to cross check and link the book depository authors to their VIAF pages (if it exists). 
 
 Note: The blow process takes a long time. Grab a coffee : )
 
@@ -853,7 +855,9 @@ plt.show()
 ```
 
 ## References
-Reno, A. (2020) _Author gender identity added to NoveList_, EBSCO Information Services, Inc. Available at: [https://www.ebsco.com/blogs/novelist/author-gender-identity-added-novelist](https://www.ebsco.com/blogs/novelist/author-gender-identity-added-novelist) (Accessed: 25 February 2022).
+1. Cima, R. (2017) _The Gender Balance of The New York Times Best Seller List_, _The Pudding_. Available at: [https://pudding.cool/2017/06/best-sellers/index.html](https://pudding.cool/2017/06/best-sellers/index.html) (Accessed: 1 March 2022).
+2. Holman, L., Stuart-Fox, D. and Hauser, C.E. (2018) ‘The gender gap in science: How long until women are equally represented?’, _PLOS Biology_. Edited by C. Sugimoto, 16(4), p. e2004956. doi:[10.1371/journal.pbio.2004956](https://doi.org/10.1371/journal.pbio.2004956).
+3. Reno, A. (2020) _Author gender identity added to NoveList_, EBSCO Information Services, Inc. Available at: [https://www.ebsco.com/blogs/novelist/author-gender-identity-added-novelist](https://www.ebsco.com/blogs/novelist/author-gender-identity-added-novelist) (Accessed: 25 February 2022).
 
 ## Linked Sources
 1. Web scraping Book Depository Webpage [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/1-Web-Scraping-BookDepository.ipynb)
