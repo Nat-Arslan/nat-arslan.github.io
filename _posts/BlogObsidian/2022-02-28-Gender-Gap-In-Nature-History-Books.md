@@ -40,7 +40,7 @@ I downloaded their date (access [here](http://viaf.org/viaf/data/ ) ). The unzip
 
 Obviously a problematic approach as there might be many authors in my dataset without a wiki page. But nevertheless this helped me to decreased the file size from ~ 9 GB to ~ 235 MB. 
 
-## 3. What if VIAF doesnt have the author's gender?
+## 3. What if VIAF doesn't have the author's gender?
 Then I can use Natural Language Toolkit to predict the authors' gender from their first name. The prediction is, yes you guessed it, of course binary. 
 
 Personal Note: I would like to understand how the text training and prediction is happening in Natural Language Toolkit #curious
@@ -86,7 +86,7 @@ This dataset is a result of webscraping. I fetched books that were published und
 
 ```python
 # Import Bookdepository CSV
-books = pd.read_csv("/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Bookdepository/NaturalHistory-Bookdepository-2021.csv", dtype=str)
+books = pd.read_csv(".../Bookdepository/NaturalHistory-Bookdepository-2021.csv", dtype=str)
 books.head(5)
 ```
 
@@ -155,7 +155,7 @@ This is the dataset downloaded from [here](http://viaf.org/viaf/data/). The unzi
 
 ```python
 # Import VIAF CSV (I changed the way I edited VIAF file. This is the 2nd version)
-viaf_db = pd.read_csv("/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Viaf/Viaf-simple.csv", dtype=str)
+viaf_db = pd.read_csv(".../Viaf/Viaf-simple.csv", dtype=str)
 
 viaf_db.head(5)
 
@@ -269,8 +269,8 @@ viaf_authors = pd.DataFrame(zipped1, columns=['Author', 'Book', 'Links'])
 predict_authors = pd.DataFrame(zipped2, columns=['Author', 'Book', 'Names'])
 
 # storing these dataframes in a csv file
-viaf_authors.to_csv(r'/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Viaf/Viaf-author-links-2021.csv') #, index = None
-predict_authors.to_csv(r'/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Viaf/Author_names_to_predict-2021.csv') 
+viaf_authors.to_csv(r'.../Viaf/Viaf-author-links-2021.csv') #, index = None
+predict_authors.to_csv(r'.../Viaf/Author_names_to_predict-2021.csv') 
 
 
 ```
@@ -292,7 +292,7 @@ There are 982 books published in 2021 within Nature History category. This code 
 
 ```python
 # Import CSV
-viaf_authors = pd.read_csv("/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Viaf/Viaf-author-links-2021.csv", dtype=str)
+viaf_authors = pd.read_csv(".../Viaf/Viaf-author-links-2021.csv", dtype=str)
 
 # Create an empty column for gender
 viaf_authors["Gender"] = ""
@@ -397,10 +397,10 @@ for i in range(len(viaf_authors)):
 
 ```python
 # Export to CSV 
-viaf_authors.to_csv('/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Viaf/Viaf-authors-gender-2021.csv')
+viaf_authors.to_csv('.../Viaf/Viaf-authors-gender-2021.csv')
 
 # Import CSV
-authors = pd.read_csv("/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Viaf/Viaf-authors-gender-2021.csv", dtype=str)
+authors = pd.read_csv(".../Viaf/Viaf-authors-gender-2021.csv", dtype=str)
 
 # Drop unnecessary columns
 authors.drop('Unnamed: 0', axis=1, inplace=True)
@@ -512,7 +512,7 @@ import nltk
 
 ```python
 # Import CSV
-predict_authors = pd.read_csv("/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Viaf/Author_names_to_predict-2021.csv", dtype=str)
+predict_authors = pd.read_csv(".../Viaf/Author_names_to_predict-2021.csv", dtype=str)
 
 # Create a colum for first names
 predict_authors["FirstName"] = ""
@@ -599,8 +599,8 @@ def gender_features(word):
 #labeled_names = ([(name, 'Female') for name in names.words('/Users/nat/Desktop/FemaleMix.rtf')]+
              #[(name, 'Male') for name in names.words('/Users/nat/Desktop/MaleMix.rtf')]) # 133 f
 
-labeled_names = ([(name, 'Female') for name in names.words('/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Names/female.txt')]+
-             [(name, 'Male') for name in names.words('/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Names/male.txt')])
+labeled_names = ([(name, 'Female') for name in names.words('.../Names/female.txt')]+
+             [(name, 'Male') for name in names.words('.../Names/male.txt')])
 
 random.shuffle(labeled_names)
 
@@ -627,7 +627,7 @@ for i in range(len(predict_authors)): #iterate over rows
     #print(name)
     
     # If the name is in the database check gender
-    if name in open('/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Names/Allnames').read():
+    if name in open('.../Names/Allnames').read():
         gender = classifier.classify(gender_features(name))
         predict_authors["Gender"][i] = str(gender)
         #print(gender)
