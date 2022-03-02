@@ -12,10 +12,12 @@ image:
   alt: an image of an open book
 ---
 ## 0. What I Learned?
-- There are very few database that has authors' gender identity
-- The freely accessible database VIAF has binary gender system
-- Using VIAF and retrieving authors' gender **significantly** slowed down the project processing time
-- Despite possible lower accuracy it might be worth to only use Natural Language Toolkit and predict authors' (binary) gender from their first names
+- There are very few database that has authors' gender identity.
+- The freely accessible database VIAF has binary gender system.
+- Using VIAF and retrieving authors' gender **significantly** slowed down the project processing time.
+- Moreover, I only managed to retrieve 30% of the nature history authors' gender data from VIAF.
+- For the rest 70% of the authors I had to predict their gender from their first name by using Natural Language Toolkit (NLTK) python library.
+- Despite possible lower accuracy it might be worth to only use Natural Language Toolkit and predict authors' (binary) gender from their first names. In fact, I analysed all the books published in nature history between 1995 and 2020.  This method was much more efficient. Read about it here. The code is [here](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/4-Gender-Gap-In-Nature-History-Books-NLTK.ipynb).
 
 ## 1. About This Project
 I try to read books on nature, nature history and popular science as much as I can. Then I wondered is there a gender gap in the amount of published books in these fields. I became curious about the percentage of women, trans and non-binary nature history writers. I found some good articles about gender gap in publishing. In her visual article in The Pudding Rosie Cima (2017) analyses the the gender balance of The New York Times best seller list. [This](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2004956) research on gender gap in academia (Holman, Stuart-Fox and Hauser, 2018) and its interactive [webpage](https://lukeholman.github.io/genderGap/) is also worth looking. Of course, in all these resources gender is binary.
@@ -36,20 +38,20 @@ The gender category for authors is binary. Check for instance one of my favorite
 (Not that anyone will here me from this tiny blog buuut....🤨. Yeap, my rant is finished now. Moving on.) 
 
 **Where to download?**
-I downloaded their date (access [here](http://viaf.org/viaf/data/ ) ). The unzipped "txt.gz" file is 9,37 GB.  When I observed the VIAF dataset, I realised that most contemporary writers had a wikipedia page. So I eliminated all the rows that didn't include a wiki link. 
+I downloaded their date ([here](http://viaf.org/viaf/data/ )). The unzipped "txt.gz" file is 9,37 GB.  When I observed the VIAF dataset, I realised that most writers had a wikipedia page. So I eliminated all the rows that didn't include a wiki link. 
 
 Obviously a problematic approach as there might be many authors in my dataset without a wiki page. But nevertheless this helped me to decreased the file size from ~ 9 GB to ~ 235 MB. 
 
 ## 3. What if VIAF doesn't have the author's gender?
-Then I can use Natural Language Toolkit to predict the authors' gender from their first name. The prediction is, yes you guessed it, of course binary. 
+Then I can use Natural Language Toolkit to predict the authors' gender from their first name. NTLK helps us with statistical natural language processing. The prediction is, yes you guessed it, of course binary.  
 
-Personal Note: I would like to understand how the text training and prediction is happening in Natural Language Toolkit #curious
+Personal Note: I would like to understand how the text training and prediction is happening in Natural Language Toolkit #curious Start reading about NLTK for example from [here](https://towardsdatascience.com/text-preprocessing-with-nltk-9de5de891658).
 
 ## 4. Finding the Nature History Writers
 There are many book retailer webpages with decent categorisation of millions of books. So
 creating a book dataset with author names and book titles is relatively easy. I used [Book Depository](https://www.bookdepository.com/category/2985/Natural-History/browse/viewmode/all?page=2) and scraped its pages with python. 
 
-They have a category called  "Natural History". Perfect. I fetched all the books under this category. The result was ~ 10,000 books with titles, authors and publishing year. I filtered the result to get the books published for each year. 
+They have a category called  "Natural History". Perfect. I fetched all the books under this category. The result was ~ 10,000 books with titles, authors and publishing year. I filtered the result to get the books published in 2021. 
 
 There are no gender identity information for authors in Book Depository nor in similar platforms. And this is why I need VIAF dataset.
 
@@ -70,7 +72,7 @@ There are no gender identity information for authors in Book Depository nor in s
 
 However it's difficult to fully rely on these results. There are numerous things to improve in this project besides finding a database with broader gender identities. These are:
 - Re-consider the use of VIAF database. Just to find gender data for ~30% of the authors the project processing time increases dramatically.
-- Improving the Natural Language Toolkit (NTLK) results to increase the binary-gender prediction accuracy
+- Improving the Natural Language Toolkit (NTLK) results to increase the binary-gender prediction accuracy.
 
 ## 6. Code 
 
@@ -289,7 +291,6 @@ There are 982 books published in 2021 within Nature History category. This code 
 
 ### Fetching gender data from VIAF pages with Beautifulsoup 
 
-
 ```python
 # Import CSV
 viaf_authors = pd.read_csv(".../Viaf/Viaf-author-links-2021.csv", dtype=str)
@@ -353,9 +354,6 @@ viaf_authors.head(5)
   </tbody>
 </table>
 </div>
-
-
-
 
 ```python
 
@@ -865,6 +863,7 @@ plt.show()
 3. Reno, A. (2020) _Author gender identity added to NoveList_, EBSCO Information Services, Inc. Available at: [https://www.ebsco.com/blogs/novelist/author-gender-identity-added-novelist](https://www.ebsco.com/blogs/novelist/author-gender-identity-added-novelist) (Accessed: 25 February 2022).
 
 ## Linked Sources
-1. Web scraping Book Depository Webpage [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/1-Web-Scraping-BookDepository.ipynb)
-2. How to work with 10GB VIAF dataset [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/2-Working-With-Downloaded-VIAF-Dataset.ipynb)
-3. Get Gender Information From a Persons' VIAF page [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/3-Get-Gender-Info-From-VIAF-Webpage.ipynb)
+1. The code for analysing gender of nature history writers by using VIAF dataset [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/0-Gender-Gap-in-Nature-History-Books-IVAF.ipynb)
+2. Web scraping Book Depository Webpage [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/1-Web-Scraping-BookDepository.ipynb)
+3. How to work with 10GB VIAF dataset [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/2-Working-With-Downloaded-VIAF-Dataset.ipynb)
+4. Get Gender Information From a Persons' VIAF page [code](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/3-Get-Gender-Info-From-VIAF-Webpage.ipynb)
