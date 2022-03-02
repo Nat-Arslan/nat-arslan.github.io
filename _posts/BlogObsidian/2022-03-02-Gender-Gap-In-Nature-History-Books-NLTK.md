@@ -11,6 +11,10 @@ image:
   height: 400   # in pixels
   alt: an image of a line chart
 ---
+## 1 About the project
+COMING SOON 🤓
+
+## 2 Code
 
 ```python
 # Source: https://www.geeksforgeeks.org/python-gender-identification-by-name-using-nltk/
@@ -21,7 +25,7 @@ import nltk
 import pandas as pd
 ```
 
-## Book Depository 
+### Book Depository 
 This is where I have the nature history writers data [here](https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/1-Web-Scraping-BookDepository.ipynb) is the code for getting this data.
 
 
@@ -170,7 +174,7 @@ authors.head(5)
 </div>
 
 
-## NLTK Prediction
+### NLTK Prediction
 I used the name dataset from [here](https://archive.ics.uci.edu/ml/datasets/Gender+by+Name)
 
 ```python
@@ -288,14 +292,14 @@ authors.head(5)
   </tbody>
 </table>
 </div>
-## Save the Result
+### Save the Result
 
 ```python
 authors.to_csv('/Users/nat/Desktop/Code/Code Projects/Book-Gender/Data/Bookdepository/NaturalHistory-All-Gender.csv')
 
 ```
 
-## Create Stat & Plot All The Data
+### Create Stat & Plot All The Data
 
 ```python
 # You can observe the data with these commands
@@ -324,7 +328,7 @@ fig.show()
 
 ![Graph1]((/attachments/images/2022-03-02-Gender-Gap-In-Nature-History-Books-NLTK0.jpeg)
 
-## Gender Gap in the all (retrieved) nature book published
+### Gender Gap in the all (retrieved) nature book published
 ```python
 f = authors['Gender'].value_counts()['Female'] # All: 3465
 m = authors['Gender'].value_counts()['Male'] # All: 5836
@@ -390,7 +394,7 @@ plt.show()
 
 ![Graph2]((/attachments/images/2022-03-02-Gender-Gap-In-Nature-History-Books-NLTK1.jpeg)
 
-## Gender Gap Yearly Analysis
+### Gender Gap Yearly Analysis
 ```python
 # Filter data
 df_2020 = authors[(authors['year'] == '2020')]
