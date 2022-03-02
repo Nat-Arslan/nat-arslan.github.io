@@ -6,7 +6,7 @@ tags: [gender, books, nature-history, python] # TAG names should always be lower
 toc: true
 comments: false
 image:
-  src: /attachments/images/2022-03-02-Gender-Gap-In-Nature-History-Books-NLTK3.jpg
+  src: /attachments/images/2022-03-02-Gender-Gap3.jpg
   width: 1000   # in pixels
   height: 400   # in pixels
   alt: an image of a line chart
@@ -326,7 +326,7 @@ fig = px.line(df_years, x=df_years['year'], y=df_years['Gender'], title='Number 
 fig.show()
 ```
 
-![Graph1]((/attachments/images/2022-03-02-Gender-Gap-In-Nature-History-Books-NLTK0.jpg)
+![Graph1](/attachments/images/2022-03-02-Gender-Gap0.jpg)
 
 ### Gender Gap in the all (retrieved) nature book published
 ```python
@@ -392,7 +392,7 @@ plt.pie(stat,
 plt.show() 
 ```
 
-![Graph2]((/attachments/images/2022-03-02-Gender-Gap-In-Nature-History-Books-NLTK1.jpg)
+![Graph2](/attachments/images/2022-03-02-Gender-Gap1.jpg)
 
 ### Gender Gap Yearly Analysis
 ```python
@@ -533,7 +533,7 @@ fig['data'][1]['name'] = 'Male'
 fig.show(renderer="png")
 ```
 
-![Graph3]((/attachments/images/2022-03-02-Gender-Gap-In-Nature-History-Books-NLTK2.jpg)
+![Graph3](/attachments/images/2022-03-02-Gender-Gap2.jpg)
 
 ```python
 import plotly.express as px
@@ -551,4 +551,4 @@ fig = px.bar(every_5,
 fig.show(renderer="png")
 ```
 
-![Graph4]((/attachments/images/2022-03-02-Gender-Gap-In-Nature-History-Books-NLTK3.jpg)
+![Graph4](/attachments/images/2022-03-02-Gender-Gap23jpg)
