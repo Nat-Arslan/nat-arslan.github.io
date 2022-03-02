@@ -551,4 +551,4 @@ fig = px.bar(every_5,
 fig.show(renderer="png")
 ```
 
-![Graph4](/attachments/images/2022-03-02-Gender-Gap23jpg)
+![Graph4](/attachments/images/2022-03-02-Gender-Gap3jpg)
