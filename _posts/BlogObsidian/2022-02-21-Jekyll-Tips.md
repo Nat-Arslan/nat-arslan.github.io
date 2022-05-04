@@ -10,6 +10,7 @@ mermaid: true
 ---
 
 ## Publishing new posts
+- cd /Users/nat/Desktop/Blog/nat-arslan.github.io
 - git add .
 - git commit -m "Initial commit"
 - Do this once. git remote add origin https://github.com/Nat-Arslan/nat-arslan.github.io.git
