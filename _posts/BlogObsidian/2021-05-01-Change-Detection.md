@@ -1,5 +1,5 @@
 ---
-title: "# Change Detection: Comparing Methods for Natural Hazard Quantification using Remote Sensing and GIS"
+title: "Change Detection: Comparing Methods for Natural Hazard Quantification using Remote Sensing and GIS"
 date: 2021-02-01
 categories: [Index]
 tags: [satellite, gis, remote sensing, ] # TAG names should always be lowercase
@@ -55,6 +55,9 @@ My study area is Palu city, on the Indonesian island of Sulawesi, where a tsunam
 
 **Project Workflow**
 ![Workflow](/attachments/images/2021-05-01-Change-Detection2.jpeg)| ![Workflow](/attachments/images/2021-05-01-Change-Detection3.jpeg) | ![Workflow](/attachments/images/2021-05-01-Change-Detection4.jpeg)
+	| 1                                                                  | 2                                                                  | 3                                                                  |
+	| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+	| ![Workflow](/attachments/images/2021-05-01-Change-Detection2.jpeg) | ![Workflow](/attachments/images/2021-05-01-Change-Detection3.jpeg) | ![Workflow](/attachments/images/2021-05-01-Change-Detection4.jpeg) | 
 The workflow has eight steps. In the end by intersecting the results from the change detection techniques with the road and building shapefiles (step 8), I’m trying to quantify the post tsunami-earthquake hazard.
 
 **Troubleshooting // Discoveries**
@@ -66,3 +69,10 @@ The workflow has eight steps. In the end by intersecting the results from the ch
 3. I realised a pixel shift between September and October images.
 
 **Results**
+![Workflow](/attachments/images/2021-05-01-Change-Detection5.jpeg)| ![Workflow](/attachments/images/2021-05-01-Change-Detection6.jpeg) | ![Workflow](/attachments/images/2021-05-01-Change-Detection7.jpeg)
+**References**
+
+1.  Campbell, J. B., & Wynne, R. H. (2011). Introduction to Remote Sensing, Fifth Edition. Guilford Press.
+2.  Mouat, D. A., Mahin, G. G., & Lancaster, J. (1993). Remote sensing techniques in the analysis of change detection. Geocarto International, 8(2), 39–50. [https://doi.org/10.1080/10106049309354407](https://doi.org/10.1080/10106049309354407)
+3.  User Guides Sentinel-2. (n.d.). Retrieved November 4, 2018, from [https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi/processing-levels/level-1](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi/processing-levels/level-1) 
+
