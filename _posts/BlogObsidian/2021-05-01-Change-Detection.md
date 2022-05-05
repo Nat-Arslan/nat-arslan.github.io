@@ -6,7 +6,7 @@ tags: [satellite, gis, remote sensing, ] # TAG names should always be lowercase
 toc: true
 comments: false
 image:
-  src: /attachments/images/2021-02-01-Sea-Level-Osaka3.jpeg
+  src: /attachments/images/2021-05-01-Change-Detection5mini.jpg
   width: 1000   # in pixels
   height: 400   # in pixels
   alt: Map estimating the exposed population in a future sea level rise scenario
@@ -54,10 +54,7 @@ As the essence of change detection is to compare pixels from before and after im
 My study area is Palu city, on the Indonesian island of Sulawesi, where a tsunami struck right after the earthquake on September 28, 2018. I used two radiometrically corrected Sentinel 2 Level 1C images (“User Guides Sentinel-2” n.d.). I used ENVI to do the atmospheric correction.
 
 **Project Workflow**
-![Workflow](/attachments/images/2021-05-01-Change-Detection2.jpeg)| ![Workflow](/attachments/images/2021-05-01-Change-Detection3.jpeg) | ![Workflow](/attachments/images/2021-05-01-Change-Detection4.jpeg)
-	| 1                                                                  | 2                                                                  | 3                                                                  |
-	| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-	| ![Workflow](/attachments/images/2021-05-01-Change-Detection2.jpeg) | ![Workflow](/attachments/images/2021-05-01-Change-Detection3.jpeg) | ![Workflow](/attachments/images/2021-05-01-Change-Detection4.jpeg) | 
+![Workflow](/attachments/images/2021-05-01-Change-Detection2.jpeg)![Workflow](/attachments/images/2021-05-01-Change-Detection3.jpeg) ![Workflow](/attachments/images/2021-05-01-Change-Detection4.jpeg)
 The workflow has eight steps. In the end by intersecting the results from the change detection techniques with the road and building shapefiles (step 8), I’m trying to quantify the post tsunami-earthquake hazard.
 
 **Troubleshooting // Discoveries**
@@ -69,7 +66,7 @@ The workflow has eight steps. In the end by intersecting the results from the ch
 3. I realised a pixel shift between September and October images.
 
 **Results**
-![Workflow](/attachments/images/2021-05-01-Change-Detection5.jpeg)| ![Workflow](/attachments/images/2021-05-01-Change-Detection6.jpeg) | ![Workflow](/attachments/images/2021-05-01-Change-Detection7.jpeg)
+![Workflow](/attachments/images/2021-05-01-Change-Detection5.jpeg)![Workflow](/attachments/images/2021-05-01-Change-Detection6.jpeg) ![Workflow](/attachments/images/2021-05-01-Change-Detection7.jpeg)
 **References**
 
 1.  Campbell, J. B., & Wynne, R. H. (2011). Introduction to Remote Sensing, Fifth Edition. Guilford Press.
