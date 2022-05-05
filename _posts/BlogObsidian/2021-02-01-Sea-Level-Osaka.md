@@ -30,7 +30,7 @@ In this project I used a simplified equation to predict future sea level for 210
 -   HS = Human-induced subsidence
 
 **Study Area**
-![Osaka](/attachments/images/2021-02-01-Sea-Level-Osaka)
+![Osaka](/attachments/images/2021-02-01-Sea-Level-Osaka.jpg)
 
 The Japan archipelago faces the Pacific Ocean to the east and the Sea of Japan to the west. It is, by nature, very vulnerable to sea level rise, land subsidence and consequently to tides and typhoons. The city of Osaka, in central Japan, is open to the Osaka Bay on the west side and it lies on a flat alluvial plain. The elevation can be as low as 1 to 3 meters in many places.
 
@@ -51,7 +51,7 @@ WL = 0.63 + 0.7 + 0.1 + 0 = 1.43 meter
 Considering the most extreme IPCC scenario, the global mean sea level predictions for 2100 is 0.63 meters (IPCC, 2015). So my simplistic formula seems way too off. But nevertheless I will compute the submerged areas assuming this water level.
 
 **Results**
-![Osaka2](/attachments/images/2021-02-01-Sea-Level-Osaka2)
+![Osaka2](/attachments/images/2021-02-01-Sea-Level-Osaka2.jpg)
 ![Osaka](/attachments/images/2021-02-01-Sea-Level-Osaka3.jpeg)
 
 The calculations show that by 2100 an area about 24 km2 could submerged in Osaka as a result of rising sea levels. 92% of the submerged areas would be urban areas where as 3% would be vegetated areas and 2% rice fields. Additional calculations reveal that 10% of the buildings could be exposed to flooding after the increase in sea level. This means that more than 210.000 people are estimated to be effected in this sea level rise scenario.
