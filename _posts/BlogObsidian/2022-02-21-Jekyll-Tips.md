@@ -18,6 +18,13 @@ mermaid: true
 
 ## Tagging
 Tag names (in YAML) should always be lowercase
+
+## Linking to other posts
+I tried using Jekyll Wikilinks Plugin, but it didnt work for me.  
+So the easy way is to:
+	- Post on blog (lets say Post A)
+	- Copy the blog URL (Post A URL)
+	- Edit the other post (Post B) and paste Post A URL under a section/header 'Linked Posts' (or something like that)
   
 ## Attaching images
 ### Path
