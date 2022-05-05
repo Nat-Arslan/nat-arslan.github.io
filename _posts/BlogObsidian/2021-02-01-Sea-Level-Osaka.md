@@ -2,7 +2,7 @@
 title: "Estimating the Sea Level Rise for 2100 in Osaka, Japan"
 date: 2021-02-01
 categories: [Index]
-tags: [python, satellite, gis, remote sensing, seagrasss] # TAG names should always be lowercase
+tags: [satellite, gis, remote sensing, climate change, sea level] # TAG names should always be lowercase
 toc: true
 comments: false
 image:
