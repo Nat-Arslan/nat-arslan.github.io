@@ -34,6 +34,10 @@ So the easy way is to:
 ### JPEG vs PNG
 You cant publish PNG images so convert them to JPEG.
 
+## Video
+How to embed a video?
+I tried embedding iframe (copy from youtube and paste into markdown editor). It works. (</iframe>)
+
 ## Publishing Jupyter notebook
 1. If you have figures save them as PNG or JPEG
    `plt.savefig('XXX.jpg')`
