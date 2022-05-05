@@ -6,10 +6,10 @@ tags: [python, satellite, gis, remote sensing, seagrasss] # TAG names should alw
 toc: true
 comments: false
 image:
-  src: /attachments/images/2022-05-01-GEBCO4.jpg
+  src: /attachments/images/2021-02-01-Sea-Level-Osaka3.jpeg
   width: 1000   # in pixels
   height: 400   # in pixels
-  alt: Image of the spiral galaxy NGC 2841 
+  alt: Map estimating the exposed population in a future sea level rise scenario
 ---
 
 This was a project for GIS Visualisation course in 2019. I wrote 21 page report but this text will be a “super summary” of it with no excessive details.
