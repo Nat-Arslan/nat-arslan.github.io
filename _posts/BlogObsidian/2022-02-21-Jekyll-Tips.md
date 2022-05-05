@@ -48,3 +48,6 @@ You cant publish PNG images so convert them to JPEG.
 	- To see the content of the table in Obsidian simply click on it. The tables html code will display.
 	- **ADD**. Create a YAML for your file. You can copy-paste it from other posts and then edit the title, date, tags etc
 	-  **DELETE** Remove or comment #plt.show() AND #plt.savefig
+
+## Chirpy Theme
+Documentation github [page](https://github.com/cotes2020/jekyll-theme-chirpy#documentation). Chirpy's web [page](https://chirpy.cotes.page). 
