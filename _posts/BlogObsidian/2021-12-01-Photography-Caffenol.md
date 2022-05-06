@@ -1,5 +1,5 @@
 ---
-title: Developing Photographic Films With Caffenol"
+title: "Developing Photographic Films With Caffenol"
 date: 2021-12-01
 categories: [Photography]
 tags: [photography, processing film, analog photography, stockholm] # TAG names should always be lowercase
