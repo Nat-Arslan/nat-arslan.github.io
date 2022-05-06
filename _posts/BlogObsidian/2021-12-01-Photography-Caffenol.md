@@ -22,6 +22,7 @@ I used the recipe shared in [this](https://caffenol.com.br/en/) webpage to cre
 
 My second trial was successful if you don’t consider my failure in using the rangefinder focusing in my Minolta Hi Matic F. Usually focusing using the rangefinder in Minolta is rather strait-forward but under some light conditions the focus dot in the rangefinder is not very visible.
 
+*Minolta Hi Matic F. Illford 400 black & white film. Caffenol developing technique.*
 ![Photo](/attachments/images/2021-12-01-Photography-Caffenol2.jpeg)
 ![Photo](/attachments/images/2021-12-01-Photography-Caffenol3.jpeg)
 ![Photo](/attachments/images/2021-12-01-Photography-Caffenol4.jpeg)
