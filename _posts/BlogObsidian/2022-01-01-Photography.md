@@ -6,10 +6,10 @@ tags: [photography, processing film, analog photography, stockholm, malmö] # TA
 toc: true
 comments: false
 image:
-  src: /attachments/images/2021-05-01-Change-Detection5mini.jpg
+  src: /attachments/images/2022-01-01-Photography18.JPG
   width: 1000   # in pixels
   height: 400   # in pixels
-  alt: Map estimating the exposed population in a future sea level rise scenario
+  alt: 
 ---
 
 # Analog Photography Collection
