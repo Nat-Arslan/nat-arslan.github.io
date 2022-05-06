@@ -1,7 +1,7 @@
 ---
 title: "The Photos I Take"
 date: 2022-01-01
-categories: [Index]
+categories: [Photography]
 tags: [photography, processing film, analog photography, stockholm, malmö] # TAG names should always be lowercase
 toc: true
 comments: false

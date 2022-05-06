@@ -1,7 +1,7 @@
 ---
 title: "Estimating the Sea Level Rise for 2100 in Osaka, Japan"
 date: 2021-02-01
-categories: [Index]
+categories: [GIS and Remote Sensing]
 tags: [satellite, gis, remote sensing, climate change, sea level] # TAG names should always be lowercase
 toc: true
 comments: false

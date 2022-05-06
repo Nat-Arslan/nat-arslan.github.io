@@ -1,7 +1,7 @@
 ---
 title: "Jekyll Tips"
 date: 2022-02-20
-categories: [testcategory]
+categories: [How To]
 tags: [how-to]     # TAG names should always be lowercase
 toc: true
 comments: false
