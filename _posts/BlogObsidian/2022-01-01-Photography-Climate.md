@@ -12,9 +12,7 @@ image:
   alt: 
 ---
 
-# Analog Photography Collection
-
-2019 was the beginning of my analog photography experience. Here I will try to collect some of my photos. I use different methods for processing of color and black & white negative films such as [Caffenol](https://caffenol.com.br/en/) and [C41 Digibase](https://www.lomography.com/magazine/236651-tutorial-rollei-c41-digibase-color-film-development) methods.
+2019 was the beginning of my analog photography experience. I use different methods for processing of color and black & white negative films such as [Caffenol](https://caffenol.com.br/en/) and [C41 Digibase](https://www.lomography.com/magazine/236651-tutorial-rollei-c41-digibase-color-film-development) methods.
 
 ## Photographing Climate Protest
 

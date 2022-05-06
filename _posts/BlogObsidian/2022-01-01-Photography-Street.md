@@ -14,9 +14,10 @@ image:
 
 More photos are on my instagram [account](https://www.instagram.com/nat.arslan/). I took these photos with my Minolta Hi Matic AF2 and Kodak 400 color film. 
 
-![Photo](/attachments/images/2022-01-01-Photography12.JPG)
-![Photo](/attachments/images/2022-01-01-Photography13.JPG)
-![Photo](/attachments/images/2022-01-01-Photography14.JPG)
-![Photo](/attachments/images/2022-01-01-Photography15.JPG)
-![Photo](/attachments/images/2022-01-01-Photography16.JPG)
-![Photo](/attachments/images/2022-01-01-Photography17.JPG)
+![Photo](/attachments/images/2022-01-01-Photography12.jpeg)
+![Photo](/attachments/images/2022-01-01-Photography13.jpeg)
+![Photo](/attachments/images/2022-01-01-Photography14.jpeg)
+![Photo](/attachments/images/2022-01-01-Photography15.jpeg)
+![Photo](/attachments/images/2022-01-01-Photography16.jpeg)
+![Photo](/attachments/images/2022-01-01-Photography17.jpeg)
+![Photo](/attachments/images/2022-01-01-Photography18.JPG)
