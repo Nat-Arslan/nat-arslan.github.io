@@ -1,8 +1,8 @@
 ---
-title: "The Photos I Take"
+title: "Photographing Climate Protest"
 date: 2022-01-01
 categories: [Photography]
-tags: [photography, processing film, analog photography, stockholm, malmö] # TAG names should always be lowercase
+tags: [photography, processing film, analog photography, stockholm] # TAG names should always be lowercase
 toc: true
 comments: false
 image:
@@ -31,10 +31,3 @@ I really enjoy archiving the banners that people create and use in the protests.
 ![Photo](/attachments/images/2022-01-01-Photography10.JPG)
 ![Photo](/attachments/images/2022-01-01-Photography11.JPG)
 
-## Other Photos
-![Photo](/attachments/images/2022-01-01-Photography12.JPG)
-![Photo](/attachments/images/2022-01-01-Photography13.JPG)
-![Photo](/attachments/images/2022-01-01-Photography14.JPG)
-![Photo](/attachments/images/2022-01-01-Photography15.JPG)
-![Photo](/attachments/images/2022-01-01-Photography16.JPG)
-![Photo](/attachments/images/2022-01-01-Photography17.JPG)
