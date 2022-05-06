@@ -20,4 +20,3 @@ More photos are on my instagram [account](https://www.instagram.com/nat.arslan/
 ![Photo](/attachments/images/2022-01-01-Photography15.jpeg)
 ![Photo](/attachments/images/2022-01-01-Photography16.jpeg)
 ![Photo](/attachments/images/2022-01-01-Photography17.jpeg)
-![Photo](/attachments/images/2022-01-01-Photography18.JPG)

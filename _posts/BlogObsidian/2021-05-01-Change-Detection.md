@@ -1,7 +1,7 @@
 ---
 title: "Change Detection: Comparing Methods for Natural Hazard Quantification using Remote Sensing and GIS"
 date: 2021-02-01
-categories: [Science]
+categories: [GIS and Remote Sensing]
 tags: [satellite, gis, remote sensing, ] # TAG names should always be lowercase
 toc: true
 comments: false
