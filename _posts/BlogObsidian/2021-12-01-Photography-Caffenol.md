@@ -6,7 +6,7 @@ tags: [photography, processing film, analog photography, stockholm] # TAG names 
 toc: true
 comments: true
 image:
-  src: /attachments/images/2022-01-01-Photography18.JPG
+  src: /attachments/images/2021-12-01-Photography-Caffenol5.jpeg
   width: 1000   # in pixels
   height: 400   # in pixels
   alt: 
