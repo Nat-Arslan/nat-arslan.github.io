@@ -4,5 +4,5 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
+>   I love working with geospatial data in Python and in various software. In Python I mainly use pandas, numpy, GDAL and matplotlib libraries. I want to contribute to the society through GIS and earth observation. 
 {: .prompt-tip }
