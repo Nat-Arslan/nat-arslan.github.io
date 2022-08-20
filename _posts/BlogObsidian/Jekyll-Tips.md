@@ -13,11 +13,15 @@ mermaid: true
 - cd /Users/nat/Desktop/Blog/nat-arslan.github.io
 - git add .
 - git commit -m "Initial commit"
-- Do this once. git remote add origin https://github.com/Nat-Arslan/nat-arslan.github.io.git
+- Do this step once. git remote add origin https://github.com/Nat-Arslan/nat-arslan.github.io.git
 - git push 
 
-## Tagging
-Tag names (in YAML) should always be lowercase
+## Categories and Tags
+Tag names (in YAML) should always be lowercase.
+
+The `categories` of each post are designed to contain up to two elements, and the number of elements in `tags` can be zero to infinity. For instance:
+
+categories: [Animal, Insect]
 
 ## Linking to other posts
 I tried using Jekyll Wikilinks Plugin, but it didnt work for me.  
@@ -52,6 +56,9 @@ I tried embedding iframe (copy from youtube and paste into markdown editor). It 
 	- To see the content of the table in Obsidian simply click on it. The tables html code will display.
 	- **ADD**. Create a YAML for your file. You can copy-paste it from other posts and then edit the title, date, tags etc
 	-  **DELETE** Remove or comment #plt.show() AND #plt.savefig
+
+## Prompts
+{: .prompt-tip }
 
 ## Chirpy Theme
 Documentation github [page](https://github.com/cotes2020/jekyll-theme-chirpy#documentation). Chirpy's web [page](https://chirpy.cotes.page). 
