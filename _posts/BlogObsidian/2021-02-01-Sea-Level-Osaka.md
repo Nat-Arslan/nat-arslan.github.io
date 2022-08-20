@@ -1,7 +1,7 @@
 ---
 title: "Estimating the Sea Level Rise for 2100 in Osaka, Japan"
 date: 2021-02-01
-categories: [Climate Change, Sea Level Rise]
+categories: [Climate Change]
 tags: [satellite, gis, remote sensing, climate change, sea level, japan, ipcc, dem, arcgis] # TAG names should always be lowercase
 toc: true
 comments: false
@@ -12,6 +12,8 @@ image:
   alt: Map estimating the exposed population in a future sea level rise scenario
 ---
 
+Sea Level Rise
+ 
 This was a project for GIS Visualisation course in 2019. I wrote 21 page report but this text will be a “super summary” of it with no excessive details.
 
 **Software**: 

@@ -21,6 +21,7 @@ Tag names (in YAML) should always be lowercase.
 
 The `categories` of each post are designed to contain up to two elements, and the number of elements in `tags` can be zero to infinity. For instance:
 
+categories: [TOP_CATEGORIE, SUB_CATEGORIE]
 categories: [Animal, Insect]
 
 ## Linking to other posts
