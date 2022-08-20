@@ -1,7 +1,7 @@
 ---
 title: "Estimating the Sea Level Rise for 2100 in Osaka, Japan"
 date: 2021-02-01
-categories: [Climate Change]
+categories: [Climate Change, Sea Level Rise]
 tags: [satellite, gis, remote sensing, climate change, sea level, japan, ipcc, dem, arcgis] # TAG names should always be lowercase
 toc: true
 comments: false
@@ -11,8 +11,6 @@ image:
   height: 400   # in pixels
   alt: Map estimating the exposed population in a future sea level rise scenario
 ---
-
-Sea Level Rise
  
 This was a project for GIS Visualisation course in 2019. I wrote 21 page report but this text will be a “super summary” of it with no excessive details.
 
@@ -83,3 +81,4 @@ The formula used in this project is simplistic and the accuracy seems low (consi
 - Japan Oceanographic Data Center. (n.d.). Tide Data Search. Retrieved January 14, 2019, from [http://jdoss1.jodc.go.jp/vpage/tide.html](http://jdoss1.jodc.go.jp/vpage/tide.html)
 - Ministry of Environment. (2005). Overview of Ground Subsidence in Japan in FY 2005. Ministry of Environment. Retrieved from [https://www.env.go.jp/](https://www.env.go.jp/) press/7835.html
 - Ramieri, E., Hartley, A., Barbanti, A., Duarte Santos, F., Gomes, A., Hilden, M.(2011). Methods for assessing coastal vulnerability to climate change (ETC CCA Technical Paper). European Environment Agency. Retrieved from [https://climate-adapt.eea.europa.eu/metadata/tools/](https://climate-adapt.eea.europa.eu/metadata/tools/) coastal-vulnerability-index-2013-cvi
+ 
