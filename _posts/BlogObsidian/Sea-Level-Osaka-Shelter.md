@@ -1,8 +1,8 @@
 ---
-title: "Estimating the Sea Level Rise for 2100 in Osaka, Japan"
+title: "How to find an accesible shelter after flooding?"
 date: 2021-02-01
-categories: [Sea Level Rise, Climate Change]
-tags: [satellite, gis, remote sensing, climate change, sea level, japan, ipcc, dem, arcgis] # TAG names should always be lowercase
+categories: [GIS and Remote Sensing]
+tags: [satellite, gis, remote sensing, climate change, sea level, japan, ipcc] # TAG names should always be lowercase
 toc: true
 comments: false
 image:
