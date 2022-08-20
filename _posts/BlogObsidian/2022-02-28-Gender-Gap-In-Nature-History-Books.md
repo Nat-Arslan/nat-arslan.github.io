@@ -1,7 +1,7 @@
 ---
 title: "Gender Gap in Nature History Books (Method: Not Preferred)"
 date: 2022-02-28
-categories: [Code]
+categories: [Natural Science, Gender]
 tags: [gender, books, nature-history, python] # TAG names should always be lowercase
 toc: true
 comments: false

@@ -1,7 +1,7 @@
 ---
 title: "Change Detection: Comparing Methods for Natural Hazard Quantification using Remote Sensing and GIS"
 date: 2021-02-01
-categories: [GIS and Remote Sensing]
+categories: [Natural and Human-Made Hazards, Tsunami]
 tags: [satellite, gis, remote sensing, ] # TAG names should always be lowercase
 toc: true
 comments: false
@@ -11,6 +11,11 @@ image:
   height: 400   # in pixels
   alt: Map estimating the exposed population in a future sea level rise scenario
 ---
+
+Software used in this project:
+- **ENVI** for atmospheric correction
+- **SNAP** for Sentinel 2 analysis
+- **ArcMap** for NDVI analysis
 
 I recently finished my master’s programme in _Geomatics with Remote Sensing and GIS._ I don’t think I would be exaggerating if I say that it was the best times of my life.
 
