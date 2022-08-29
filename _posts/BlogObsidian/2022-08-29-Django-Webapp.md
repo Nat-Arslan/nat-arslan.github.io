@@ -14,7 +14,7 @@ image:
 
 This is my first Django web app where I created an interactive map of earthquake data. In the clickable map you can display the location and magnitude information in the popups.
 
-In this [jupyter notebook](https://github.com/natarslan/Simple-Django-App-With-Leaflet-/blob/main/SimpleDjangoApp.ipynb) you can see the steps I followed and all the notes I took in order to understand the process of :
+In this [jupyter notebook](https://github.com/natarslan/Simple-Django-App-With-Leaflet-/blob/main/SimpleDjangoApp-Github.ipynb) you can see the steps I followed and all the notes I took in order to understand the process of :
 
 - Downloading and activating PostgreSQL and PostGIS
 - Creating a Django web app
