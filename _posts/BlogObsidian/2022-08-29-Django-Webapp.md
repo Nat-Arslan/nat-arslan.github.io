@@ -11,7 +11,6 @@ image:
   height: 400   # in pixels
   alt: 
 ---
-# Simple Django App With Leaflet and PostGIS
 
 This is my first Django web app where I created an interactive map of earthquake data. In the clickable map you can display the location and magnitude information in the popups.
 
