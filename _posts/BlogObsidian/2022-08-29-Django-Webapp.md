@@ -6,7 +6,7 @@ tags: [python, webdev, leaflet, django, postgis, earthquake, javascript] # TAG n
 toc: true
 comments: false
 image:
-  src: /attachments/images/2022-08-29-Django-Webapp1.jpeg
+  src: /attachments/images/2022-08-29-Django-Webapp2.jpeg
   width: 1000   # in pixels
   height: 400   # in pixels
   alt: 
@@ -25,6 +25,6 @@ In this [jupyter notebook](https://github.com/natarslan/Simple-Django-App-With-L
 	-   Change icon style to circle
 	-   Display the circle size dependent on earthquake magnitude
 
-This was tremendously fun and I can see that I have a long way to go. I would like to repeat a similar and perhaps simpler project to understand all the steps and how all the components are connected to each other.
+This was tremendously fun and I can see that I have a long way to go. I would like to repeat a similar project to understand all the steps and how all the components are connected to each other.
 
 If you are curious here is the [github page](https://github.com/natarslan/Simple-Django-App-With-Leaflet-/blob/main/README.md) for this project
