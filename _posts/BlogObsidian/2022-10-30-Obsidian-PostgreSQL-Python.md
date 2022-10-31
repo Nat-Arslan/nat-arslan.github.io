@@ -5,7 +5,7 @@ tags: [python, sql, notetaking] # TAG names should always be lowercase
 toc: false
 comments: false
 image:
-  src: /attachments/images/2022-10-31 Obsidian PostgreSQL Python.jpg
+  src: /attachments/images/2022-10-31-Obsidian-PostgreSQL-Python.jpg
   width: 1000   # in pixels
   height: 400   # in pixels
   alt: 
