@@ -1,0 +1,587 @@
+<!DOCTYPE html><html lang="en" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.2.1" /><meta property="og:title" content="Gender Gap in Nature History Books (Method: Not Preferred)" /><meta property="og:locale" content="en" /><meta name="description" content="About This Project I try to read books on nature, nature history and popular science as much as I can. Then I wondered is there a gender gap in the amount of published books in these fields. I became curious about the percentage of women, trans and non-binary nature history writers." /><meta property="og:description" content="About This Project I try to read books on nature, nature history and popular science as much as I can. Then I wondered is there a gender gap in the amount of published books in these fields. I became curious about the percentage of women, trans and non-binary nature history writers." /><link rel="canonical" href="https://nat-arslan.github.io//posts/Gender-Gap-In-Nature-History-Books/" /><meta property="og:url" content="https://nat-arslan.github.io//posts/Gender-Gap-In-Nature-History-Books/" /><meta property="og:site_name" content="Nat Arslan" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2022-02-28T00:00:00+01:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Gender Gap in Nature History Books (Method: Not Preferred)" /><meta name="twitter:site" content="@twitter_username" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-20T12:07:11+02:00","datePublished":"2022-02-28T00:00:00+01:00","description":"About This Project I try to read books on nature, nature history and popular science as much as I can. Then I wondered is there a gender gap in the amount of published books in these fields. I became curious about the percentage of women, trans and non-binary nature history writers.","headline":"Gender Gap in Nature History Books (Method: Not Preferred)","mainEntityOfPage":{"@type":"WebPage","@id":"https://nat-arslan.github.io//posts/Gender-Gap-In-Nature-History-Books/"},"url":"https://nat-arslan.github.io//posts/Gender-Gap-In-Nature-History-Books/"}</script><title>Gender Gap in Nature History Books (Method: Not Preferred) | Nat Arslan</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Nat Arslan"><meta name="application-name" content="Nat Arslan"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get MODE_ATTR() { return "data-mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_ATTR); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc" data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src=" /attachments/images/favicons/android-chrome-512x512.png " alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">Nat Arslan</a></div><div class="site-subtitle font-italic">A personal space for my curiosities</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/natarslan" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/twitter_username" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['nat.arslan.blog','protonmail.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Home </a> </span> <span>Gender Gap in Nature History Books (Method: Not Preferred)</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"> <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 400'%3E%3C/svg%3E" data-src="/attachments/images/ben-white-W8Qqn1PmQH0-unsplash.jpg" class="preview-img bg" alt="an image of an open book" width="1000" height="400" data-proofer-ignore><h1 data-toc-skip>Gender Gap in Nature History Books (Method: Not Preferred)</h1><div class="post-meta text-muted"><div> By <em> <a href="https://twitter.com/username">Nat Arslan</a> </em></div><div class="d-flex"><div> <span> Posted <em class="timeago" data-ts="1646002800" data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll" > 2022-02-28 </em> </span> <span> Updated <em class="timeago" data-ts="1660990031" data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll" > 2022-08-20 </em> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="2904 words"> <em>16 min</em> read</span></div></div></div><div class="post-content"><h2 id="about-this-project"><span class="mr-2">About This Project</span><a href="#about-this-project" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><p>I try to read books on nature, nature history and popular science as much as I can. Then I wondered is there a gender gap in the amount of published books in these fields. I became curious about the percentage of women, trans and non-binary nature history writers.</p><p>I found some good articles about gender gap in publishing. In her visual article in The Pudding, Rosie Cima (2017) analyses the the gender balance of The New York Times best seller list. <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2004956">This</a> research on gender gap in academia (Holman, Stuart-Fox and Hauser, 2018) and its interactive <a href="https://lukeholman.github.io/genderGap/">webpage</a> is also worth looking. Of course, in all these research gender is binary.</p><h2 id="main-questions"><span class="mr-2">Main Questions</span><a href="#main-questions" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><ul><li>Where to access nature history book authors?<li>Where to access author gender data?<li>Is there a gender gap in the published nature history books?</ul><h2 id="how-to-find-authors-gender-identity"><span class="mr-2">How to find authors’ gender identity?</span><a href="#how-to-find-authors-gender-identity" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><p>There are some services that libraries can use like Novelist (which is a division of EBSCO now) that provides detailed information about books and their authors. In 2020 Novelist broadened their database to include trans and non-binary to their database (Reno, 2020). This service is available in Novelist Plus but my university is not subscribed to that. So is there another database for author gender identities? Enters VIAF.</p><p><strong>What is VIAF?</strong> You can read more about VIAF <a href="https://en.wikipedia.org/wiki/Virtual_International_Authority_File">here</a>. It is a database that combines information from multiple authorities including libraries.</p><p><strong>Why I use it?</strong> There are personal pages for many authors in VIAF. Each page includes information about the authors’ publication and personal data, including their gender. Check Urusla K. Le Guin’s page <a href="http://viaf.org/viaf/101734435/#Le_Guin,_Ursula_K.,_1929-2018">here</a> for example.</p><p><strong>Downsides?</strong></p><ul><li>Not all authors have gender data in the database<li>Binary gender system</ul><p>The gender category for authors is binary. Check for instance one of my favorite non-binary authors page, <a href="http://viaf.org/viaf/16492757/#Newitz,_Annalee,_1969-....">Annalee Newitz</a>. Annalee is categorised as “Female”. So here is a shout out to VIAF:</p><blockquote><p>Please update your database to include more than two genders!</p></blockquote><p>(Not that anyone will here me from this tiny blog buuut….🤨. Yeap, my rant is finished now. Moving on.)</p><p><strong>Where to download?</strong> I downloaded their date (<a href="http://viaf.org/viaf/data/">here</a>). The unzipped “txt.gz” file is 9,37 GB.</p><p><strong>How to decrease the file size to make quicker analysis?</strong> When I observed the VIAF dataset, I realised that a single author had dosens of rows and I only needed a single row containing the authors’ VIAF webpage link (which is accompanied by a wikipedia link). So lets only keep the rows that has a wikipedia link.</p><p>Obviously a problematic approach as there might be many authors in my dataset without a wiki page. But nevertheless this helped me to decreased the file size from ~ 9 GB to ~ 235 MB.</p><h2 id="what-if-viaf-doesnt-have-the-authors-gender"><span class="mr-2">What if VIAF doesn’t have the author’s gender?</span><a href="#what-if-viaf-doesnt-have-the-authors-gender" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><p>Then I can use Natural Language Toolkit to predict the authors’ gender from their first name. NTLK helps us with statistical natural language processing. The prediction is, yes you guessed it, of course binary.</p><p>Personal Note: I would like to understand how the text training and prediction is happening in Natural Language Toolkit. Read about NLTK for example from <a href="https://towardsdatascience.com/text-preprocessing-with-nltk-9de5de891658">here</a>.</p><h2 id="finding-the-nature-history-writers"><span class="mr-2">Finding the Nature History Writers</span><a href="#finding-the-nature-history-writers" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><p>There are many book retailer webpages with decent categorisation of millions of books. So creating a book dataset with author names and book titles is relatively easy. I used <a href="https://www.bookdepository.com/category/2985/Natural-History/browse/viewmode/all?page=2">Book Depository</a> and scraped its pages with python.</p><p>They have a category called “Natural History”. Perfect. I fetched all the books under this category. The result was ~ 10,000 books with titles, authors and publishing year. I filtered the result to get the books published in 2021.</p><p>There are no gender identity information for authors in Book Depository nor in similar platforms. And this is why I need VIAF dataset.</p><h2 id="code-workflow"><span class="mr-2">Code Workflow</span><a href="#code-workflow" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><ul><li>Import Book Depository data<li>Import VIAF data<li>Cross check and match if an author listed in the Book Depository data exists in VIAF dataset.<li>If yes: Go to authors page and get their gender info<li>If no: Try to predict the authors’ gender from their first name by using Natural Language Toolkit<li>Summarise the findings</ul><h2 id="result"><span class="mr-2">Result</span><a href="#result" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><ul><li>There are 982 books published in 2021 within “Nature History” category.<li>I retrieved the author gender of~ 32% of these books from VIAF page.<li>For the remaining ~68% of the books/authors I used Natural Language Processing to predict their gender from their first names.<li>This method couldn’t define gender of 15% of the authors .<li>The results show (excluding the undetermined authors) that 6 out of 10 natural history books that were published during 2021 are written by male authors.</ul><p>However it’s difficult to fully rely on these results. There are numerous things to improve in this project besides finding a database with broader gender identities. These are:</p><ul><li>Re-consider the use of VIAF database. Just to find gender data for ~30% of the authors the project processing time increases dramatically.<li>Improving the Natural Language Toolkit (NTLK) results to increase the binary-gender prediction accuracy.</ul><h2 id="what-i-learned"><span class="mr-2">What I Learned?</span><a href="#what-i-learned" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><ul><li>There are very few database that has authors’ gender identity.<li>The freely accessible database VIAF has binary gender system.<li>Using VIAF and retrieving authors’ gender <strong>significantly</strong> slowed down the project processing time.<li>Moreover, I only managed to retrieve 30% of the nature history authors’ gender data from VIAF.<li>For the rest 70% of the authors I had to predict their gender from their first name by using Natural Language Toolkit (NLTK) python library.<li>Despite possible lower accuracy it might be worth to only use Natural Language Toolkit and predict authors’ (binary) gender from their first names. In fact, I analysed all the books published in nature history between 1995 and 2020. This method was much more efficient. Read about it here. The code is <a href="https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/4-Gender-Gap-In-Nature-History-Books-NLTK.ipynb">here</a>.</ul><h2 id="code"><span class="mr-2">Code</span><a href="#code" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+</pre></table></code></div></div><h3 id="bookdepository-dataset"><span class="mr-2">Bookdepository Dataset</span><a href="#bookdepository-dataset" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><p>This dataset is a result of webscraping. I fetched books that were published under natural history category in bookdepository <a href="https://www.bookdepository.com/category/2985/Natural-History/browse/viewmode/all?page=1">webpage</a>. The result was ~ 10,000 books with titles, authors and publishing year. I filtered this data and retrieved the natural history books for each year between 2015 and 2021. In this project I will check only the books published 2021 = 982 books.</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre><span class="c1"># Import Bookdepository CSV
+</span><span class="n">books</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">".../Bookdepository/NaturalHistory-Bookdepository-2021.csv"</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">books</span><span class="p">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></table></code></div></div><div><table border="1" class="dataframe"><thead><tr style="text-align: right;"><th><th>Unnamed: 0<th>authors<th>titles<th>date<th>year<tbody><tr><th>0<td>17<td>Merlin Sheldrake<td>Entangled Life<td>02 Sep 2021<td>2021<tr><th>1<td>35<td>Jeremy Clarkson<td>Diddly Squat<td>11 Nov 2021<td>2021<tr><th>2<td>38<td>Lia Leendertz<td>The Almanac<td>02 Sep 2021<td>2021<tr><th>3<td>43<td>Sosuke Natsukawa<td>The Cat Who Saved Books<td>16 Sep 2021<td>2021<tr><th>4<td>62<td>James Stewart<td>Dinosaur Therapy<td>24 Aug 2021<td>2021</table></div><h3 id="virtual-international-authority-file-viaf-dataset"><span class="mr-2">Virtual International Authority File (VIAF) Dataset</span><a href="#virtual-international-authority-file-viaf-dataset" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><p>This is the dataset downloaded from <a href="http://viaf.org/viaf/data/">here</a>. The unzipped file is 9,37 GB.</p><p>When I observed the VIAF dataset, I realised that a single author had dosens of rows and I only needed a single row containing the authors’ VIAF webpage link. So lets simplify the csv file by only keeping the rows that has a VIAF link. Decreased the file size from ~ 9 GB to ~ 235 MB.</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="c1"># Import VIAF CSV (I changed the way I edited VIAF file. This is the 2nd version)
+</span><span class="n">viaf_db</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">".../Viaf/Viaf-simple.csv"</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="n">viaf_db</span><span class="p">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+</pre></table></code></div></div><div><table border="1" class="dataframe"><thead><tr style="text-align: right;"><th><th>Unnamed: 0<th>viaf<th>info<th>Name<tbody><tr><th>0<td>11<td>http://viaf.org/viaf/10001407<td>Wikipedia@https://cs.wikipedia.org/wiki/Pavel_...<td>Pavel Hrach<tr><th>1<td>70<td>http://viaf.org/viaf/100109330<td>Wikipedia@https://fr.wikipedia.org/wiki/Emile_...<td>Emile de Meester de Ravestein<tr><th>2<td>121<td>http://viaf.org/viaf/100144403<td>Wikipedia@https://cy.wikipedia.org/wiki/Teresa...<td>Teresa Magalhães<tr><th>3<td>246<td>http://viaf.org/viaf/100177876<td>Wikipedia@https://nl.wikipedia.org/wiki/Guilla...<td>Guillaume Caoursin<tr><th>4<td>331<td>http://viaf.org/viaf/100208187<td>Wikipedia@https://ru.wikipedia.org/wiki/Ришле,...<td>Ришле, Сезар-Пьер</table></div><h3 id="check-viaf-links-by-using-the-bookdepository-author-names"><span class="mr-2">Check VIAF links by using the Bookdepository author names</span><a href="#check-viaf-links-by-using-the-bookdepository-author-names" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><p>All we need to do is to cross check and link the book depository authors to their VIAF pages (if it exists).</p><p>Note: The blow process takes a long time. Grab a coffee : )</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</pre><td class="rouge-code"><pre><span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">author_with_viaf</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">books_with_viaf</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">names_to_predict</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">author_without_viaf</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">books_without_viaf</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">books</span><span class="p">[</span><span class="s">'authors'</span><span class="p">])):</span>
+    
+    <span class="c1"># Find whether the name in bookdeposit dataset exists in VIAF dataset
+</span>    <span class="n">name</span> <span class="o">=</span> <span class="n">books</span><span class="p">[</span><span class="s">'authors'</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="c1">#print(i)
+</span>    
+    <span class="n">boolean_finding</span> <span class="o">=</span> <span class="n">viaf_db</span><span class="p">[</span><span class="s">'Name'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="bp">False</span><span class="p">).</span><span class="nb">any</span><span class="p">()</span> <span class="c1"># True or False
+</span>    
+    <span class="c1"># If its true get the viaf link
+</span>    <span class="k">if</span> <span class="n">boolean_finding</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+        
+        <span class="n">df2</span> <span class="o">=</span> <span class="n">viaf_db</span><span class="p">[(</span><span class="n">viaf_db</span><span class="p">[</span><span class="s">'Name'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="bp">False</span><span class="p">))]</span>
+        <span class="n">viaf_link</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s">'viaf'</span><span class="p">].</span><span class="n">loc</span><span class="p">[</span><span class="n">df2</span><span class="p">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="n">links</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">viaf_link</span><span class="p">)</span>
+        
+        <span class="n">author_with_viaf</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">books</span><span class="p">[</span><span class="s">'authors'</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">books_with_viaf</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">books</span><span class="p">[</span><span class="s">'titles'</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+    
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">names_to_predict</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">author_without_viaf</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">books</span><span class="p">[</span><span class="s">'authors'</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">books_without_viaf</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">books</span><span class="p">[</span><span class="s">'titles'</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Cross checking finished. If a VIAF link exists for an author it was saved in the list."</span><span class="p">)</span>
+    
+    
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="c1"># Convert lists to dataframe and then save locally (Saving the files makes it easier to test)
+# Create dataframe from the lists
+</span><span class="n">zipped1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">author_with_viaf</span><span class="p">,</span> <span class="n">books_with_viaf</span><span class="p">,</span> <span class="n">links</span><span class="p">))</span>
+<span class="n">zipped2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">author_without_viaf</span><span class="p">,</span> <span class="n">books_without_viaf</span><span class="p">,</span> <span class="n">names_to_predict</span><span class="p">))</span>
+
+<span class="n">viaf_authors</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">zipped1</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">'Author'</span><span class="p">,</span> <span class="s">'Book'</span><span class="p">,</span> <span class="s">'Links'</span><span class="p">])</span>
+<span class="n">predict_authors</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">zipped2</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">'Author'</span><span class="p">,</span> <span class="s">'Book'</span><span class="p">,</span> <span class="s">'Names'</span><span class="p">])</span>
+
+<span class="c1"># storing these dataframes in a csv file
+</span><span class="n">viaf_authors</span><span class="p">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">r</span><span class="s">'.../Viaf/Viaf-author-links-2021.csv'</span><span class="p">)</span> <span class="c1">#, index = None
+</span><span class="n">predict_authors</span><span class="p">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">r</span><span class="s">'.../Viaf/Author_names_to_predict-2021.csv'</span><span class="p">)</span> 
+
+
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="n">b</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">books</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">viaf_authors</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">predict_authors</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"There are {} books published in 2021 within Nature History category. This code managed to link {} of these book authors to their personal VIAF pages from which we will retrieve author gender information. We need to predict the gender for the remaining {} authors."</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">p</span><span class="p">))</span>
+
+</pre></table></code></div></div><p>There are 982 books published in 2021 within Nature History category. This code managed to link 311 of these book authors to their personal VIAF pages from which we will retrieve author gender information. We need to predict the gender for the remaining 671 authors.</p><h3 id="fetching-gender-data-from-viaf-pages-with-beautifulsoup"><span class="mr-2">Fetching gender data from VIAF pages with Beautifulsoup</span><a href="#fetching-gender-data-from-viaf-pages-with-beautifulsoup" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="c1"># Import CSV
+</span><span class="n">viaf_authors</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">".../Viaf/Viaf-author-links-2021.csv"</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="c1"># Create an empty column for gender
+</span><span class="n">viaf_authors</span><span class="p">[</span><span class="s">"Gender"</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span>
+
+<span class="c1"># Drop unnecessary columns
+</span><span class="n">viaf_authors</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s">'Unnamed: 0'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">viaf_authors</span><span class="p">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></table></code></div></div><div><table border="1" class="dataframe"><thead><tr style="text-align: right;"><th><th>Author<th>Book<th>Links<th>Gender<tbody><tr><th>0<td>Merlin Sheldrake<td>Entangled Life<td>http://viaf.org/viaf/31157340763509922488<td><tr><th>1<td>Jeremy Clarkson<td>Diddly Squat<td>http://viaf.org/viaf/102195935<td><tr><th>2<td>James Stewart<td>Dinosaur Therapy<td>http://viaf.org/viaf/121702213<td><tr><th>3<td>James Rebanks<td>English Pastoral<td>http://viaf.org/viaf/311766886<td><tr><th>4<td>Raynor Winn<td>The Wild Silence<td>http://viaf.org/viaf/74154921352863592450<td></table></div><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</pre><td class="rouge-code"><pre>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">viaf_authors</span><span class="p">)):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">viaf_authors</span><span class="p">[</span><span class="s">"Author"</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="c1">#print(i)
+</span>    
+    <span class="n">url</span> <span class="o">=</span> <span class="n">viaf_authors</span><span class="p">[</span><span class="s">'Links'</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">content</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s">"lxml"</span><span class="p">)</span>
+    
+    <span class="n">gender</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">"div.subsection"</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\t</span><span class="s">'</span><span class="p">,</span><span class="s">' '</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'   '</span><span class="p">,</span><span class="s">''</span><span class="p">)</span>
+        <span class="n">gender</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">split</span><span class="p">(</span><span class="s">'Nationality'</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        
+    <span class="n">f</span> <span class="o">=</span> <span class="s">"Female"</span> <span class="ow">in</span> <span class="n">gender</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="s">"Male"</span> <span class="ow">in</span> <span class="n">gender</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">f</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">viaf_authors</span><span class="p">[</span><span class="s">"Gender"</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">"Female"</span>
+        <span class="c1">#print(name, "Female")  
+</span>    <span class="k">elif</span> <span class="n">m</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">viaf_authors</span><span class="p">[</span><span class="s">"Gender"</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">"Male"</span>
+        <span class="c1">#print(name, "Male")   
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="n">viaf_authors</span><span class="p">[</span><span class="s">"Gender"</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">"Unknown"</span>
+        <span class="c1">#print(name, "Unknown")
+</span>
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="c1"># Export to CSV 
+</span><span class="n">viaf_authors</span><span class="p">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">'.../Viaf/Viaf-authors-gender-2021.csv'</span><span class="p">)</span>
+
+<span class="c1"># Import CSV
+</span><span class="n">authors</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">".../Viaf/Viaf-authors-gender-2021.csv"</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="c1"># Drop unnecessary columns
+</span><span class="n">authors</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s">'Unnamed: 0'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">authors</span><span class="p">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></table></code></div></div><div><table border="1" class="dataframe"><thead><tr style="text-align: right;"><th><th>Author<th>Book<th>Links<th>Gender<tbody><tr><th>0<td>Merlin Sheldrake<td>Entangled Life<td>http://viaf.org/viaf/31157340763509922488<td>NaN<tr><th>1<td>Jeremy Clarkson<td>Diddly Squat<td>http://viaf.org/viaf/102195935<td>NaN<tr><th>2<td>James Stewart<td>Dinosaur Therapy<td>http://viaf.org/viaf/121702213<td>NaN<tr><th>3<td>James Rebanks<td>English Pastoral<td>http://viaf.org/viaf/311766886<td>NaN<tr><th>4<td>Raynor Winn<td>The Wild Silence<td>http://viaf.org/viaf/74154921352863592450<td>NaN</table></div><h3 id="statistics-viaf"><span class="mr-2">Statistics (VIAF)</span><a href="#statistics-viaf" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="n">f1</span> <span class="o">=</span> <span class="n">authors</span><span class="p">[</span><span class="s">'Gender'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()[</span><span class="s">'Female'</span><span class="p">]</span> <span class="c1"># 113 &lt;class 'numpy.int64'&gt;
+</span><span class="n">m1</span> <span class="o">=</span> <span class="n">authors</span><span class="p">[</span><span class="s">'Gender'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()[</span><span class="s">'Male'</span><span class="p">]</span> <span class="c1"># 202
+</span><span class="n">u1</span> <span class="o">=</span> <span class="n">authors</span><span class="p">[</span><span class="s">'Gender'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()[</span><span class="s">'Unknown'</span><span class="p">]</span> <span class="c1"># 24
+</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'female'</span><span class="p">:</span> <span class="p">[</span><span class="n">f1</span><span class="p">],</span>
+    <span class="s">'male'</span><span class="p">:</span> <span class="p">[</span><span class="n">m1</span><span class="p">],</span>
+    <span class="s">'unknown'</span><span class="p">:</span> <span class="p">[</span><span class="n">u1</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="n">data1</span>
+</pre></table></code></div></div><div><table border="1" class="dataframe"><thead><tr style="text-align: right;"><th><th>female<th>male<th>unknown<tbody><tr><th>0<td>106<td>175<td>30</table></div><h3 id="predicting-gender-from-first-name-by-using-natural-language-processing"><span class="mr-2">Predicting gender from first name by using Natural Language Processing</span><a href="#predicting-gender-from-first-name-by-using-natural-language-processing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><p>For those Book Depository author names that didn’t match with any VIAF data we can use NLTK to train and predict the binary gender of the authors from their first names.</p><p>Of course the method is problematic. Not just because it predicts and assigns the wrong gender to authors’ first name but also because of the binary gender assumption. In this method there is no room for non-binary and trans people. I tested the trained NLTK with my name and with 80% accuracy the code said I was a male. Well, I’m not.</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="c1"># Source: https://www.geeksforgeeks.org/python-gender-identification-by-name-using-nltk/
+</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">names</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="c1"># Import CSV
+</span><span class="n">predict_authors</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">".../Viaf/Author_names_to_predict-2021.csv"</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="c1"># Create a colum for first names
+</span><span class="n">predict_authors</span><span class="p">[</span><span class="s">"FirstName"</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span>
+<span class="n">predict_authors</span><span class="p">[</span><span class="s">'FirstName'</span><span class="p">]</span> <span class="o">=</span> <span class="n">predict_authors</span><span class="p">[</span><span class="s">'Names'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">' '</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># Create an empty column for gender
+</span><span class="n">predict_authors</span><span class="p">[</span><span class="s">"Gender"</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span>
+
+<span class="c1"># Drop unnecessary columns
+</span><span class="n">predict_authors</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="s">'Unnamed: 0'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">predict_authors</span><span class="p">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></table></code></div></div><div><table border="1" class="dataframe"><thead><tr style="text-align: right;"><th><th>Author<th>Book<th>Names<th>FirstName<th>Gender<tbody><tr><th>0<td>Lia Leendertz<td>The Almanac<td>Lia Leendertz<td>Lia<td><tr><th>1<td>Sosuke Natsukawa<td>The Cat Who Saved Books<td>Sosuke Natsukawa<td>Sosuke<td><tr><th>2<td>Lelia Wanick Salgado<td>Sebastiao Salgado. GENESIS<td>Lelia Wanick Salgado<td>Lelia<td><tr><th>3<td>Rodney Habib<td>The Forever Dog<td>Rodney Habib<td>Rodney<td><tr><th>4<td>Andrew Cotter<td>Dog Days<td>Andrew Cotter<td>Andrew<td></table></div><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+</pre><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">names</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+
+<span class="c1"># Source1: ntlk prediction: https://www.geeksforgeeks.org/python-gender-identification-by-name-using-nltk/
+</span>
+<span class="k">def</span> <span class="nf">gender_features</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s">'last_letter'</span><span class="p">:</span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]}</span>
+  
+<span class="c1"># preparing a list of examples and corresponding class labels.
+#labeled_names = ([(name, 'Female') for name in names.words('/Users/nat/Desktop/FemaleMix.rtf')]+
+</span>             <span class="c1">#[(name, 'Male') for name in names.words('/Users/nat/Desktop/MaleMix.rtf')]) # 133 f
+</span>
+<span class="n">labeled_names</span> <span class="o">=</span> <span class="p">([(</span><span class="n">name</span><span class="p">,</span> <span class="s">'Female'</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">.</span><span class="n">words</span><span class="p">(</span><span class="s">'.../Names/female.txt'</span><span class="p">)]</span><span class="o">+</span>
+             <span class="p">[(</span><span class="n">name</span><span class="p">,</span> <span class="s">'Male'</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">.</span><span class="n">words</span><span class="p">(</span><span class="s">'.../Names/male.txt'</span><span class="p">)])</span>
+
+<span class="n">random</span><span class="p">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">labeled_names</span><span class="p">)</span>
+
+<span class="c1"># we use the feature extractor to process the names data.
+</span><span class="n">featuresets</span> <span class="o">=</span> <span class="p">[(</span><span class="n">gender_features</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">gender</span><span class="p">)</span> 
+               <span class="k">for</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">gender</span><span class="p">)</span><span class="ow">in</span> <span class="n">labeled_names</span><span class="p">]</span>
+  
+<span class="c1"># Divide the resulting list of feature
+# sets into a training set and a test set.
+</span><span class="n">train_set</span><span class="p">,</span> <span class="n">test_set</span> <span class="o">=</span> <span class="n">featuresets</span><span class="p">[</span><span class="mi">500</span><span class="p">:],</span> <span class="n">featuresets</span><span class="p">[:</span><span class="mi">500</span><span class="p">]</span>
+  
+<span class="c1"># The training set is used to 
+# train a new "naive Bayes" classifier.
+</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">nltk</span><span class="p">.</span><span class="n">NaiveBayesClassifier</span><span class="p">.</span><span class="n">train</span><span class="p">(</span><span class="n">train_set</span><span class="p">)</span>
+
+<span class="n">predicted_gender</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Use the new dataframe with Nan instead of "book_database" dataframe because emoty cells cause issues.
+</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">predict_authors</span><span class="p">)):</span> <span class="c1">#iterate over rows
+</span>    
+    <span class="c1"># Get the name
+</span>    <span class="n">name</span> <span class="o">=</span> <span class="n">predict_authors</span><span class="p">[</span><span class="s">'FirstName'</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="c1">#print(name)
+</span>    
+    <span class="c1"># If the name is in the database check gender
+</span>    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s">'.../Names/Allnames'</span><span class="p">).</span><span class="n">read</span><span class="p">():</span>
+        <span class="n">gender</span> <span class="o">=</span> <span class="n">classifier</span><span class="p">.</span><span class="n">classify</span><span class="p">(</span><span class="n">gender_features</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="n">predict_authors</span><span class="p">[</span><span class="s">"Gender"</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">gender</span><span class="p">)</span>
+        <span class="c1">#print(gender)
+</span>    
+    <span class="c1"># If the name is empty print unknown
+</span>    <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">predict_authors</span><span class="p">[</span><span class="s">"Gender"</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">"Unknown"</span>
+        <span class="c1">#print("Empty")
+</span>        
+    <span class="c1"># If the name is not in the database print unknown
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="c1">#print ('Unknown')
+</span>        <span class="n">predict_authors</span><span class="p">[</span><span class="s">"Gender"</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">"Unknown"</span>
+    
+    
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="c1">#pd.set_option('display.max_rows', None)
+</span><span class="n">predict_authors</span><span class="p">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></table></code></div></div><div><table border="1" class="dataframe"><thead><tr style="text-align: right;"><th><th>Author<th>Book<th>Names<th>FirstName<th>Gender<tbody><tr><th>0<td>Lia Leendertz<td>The Almanac<td>Lia Leendertz<td>Lia<td>Female<tr><th>1<td>Sosuke Natsukawa<td>The Cat Who Saved Books<td>Sosuke Natsukawa<td>Sosuke<td>Unknown<tr><th>2<td>Lelia Wanick Salgado<td>Sebastiao Salgado. GENESIS<td>Lelia Wanick Salgado<td>Lelia<td>Female<tr><th>3<td>Rodney Habib<td>The Forever Dog<td>Rodney Habib<td>Rodney<td>Female<tr><th>4<td>Andrew Cotter<td>Dog Days<td>Andrew Cotter<td>Andrew<td>Male</table></div><h3 id="statistics-ntlk"><span class="mr-2">Statistics (NTLK)</span><a href="#statistics-ntlk" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="n">f2</span> <span class="o">=</span> <span class="n">predict_authors</span><span class="p">[</span><span class="s">'Gender'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()[</span><span class="s">'Female'</span><span class="p">]</span> <span class="c1"># 133 OR 186
+</span><span class="n">m2</span> <span class="o">=</span> <span class="n">predict_authors</span><span class="p">[</span><span class="s">'Gender'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()[</span><span class="s">'Male'</span><span class="p">]</span> <span class="c1"># 296
+</span><span class="n">u2</span> <span class="o">=</span> <span class="n">predict_authors</span><span class="p">[</span><span class="s">'Gender'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()[</span><span class="s">'Unknown'</span><span class="p">]</span> <span class="c1"># 85
+</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'female'</span><span class="p">:</span> <span class="p">[</span><span class="n">f2</span><span class="p">],</span>
+    <span class="s">'male'</span><span class="p">:</span> <span class="p">[</span><span class="n">m2</span><span class="p">],</span>
+    <span class="s">'unknown'</span><span class="p">:</span> <span class="p">[</span><span class="n">u2</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="n">data2</span>
+</pre></table></code></div></div><div><table border="1" class="dataframe"><thead><tr style="text-align: right;"><th><th>female<th>male<th>unknown<tbody><tr><th>0<td>247<td>311<td>113</table></div><h3 id="summing-it-all-up"><span class="mr-2">Summing it all up</span><a href="#summing-it-all-up" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="c1"># Total of VIAF gender &amp; predicted gender
+</span><span class="n">total_f</span> <span class="o">=</span> <span class="n">f1</span> <span class="o">+</span> <span class="n">f2</span>
+<span class="n">total_m</span> <span class="o">=</span> <span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span>
+<span class="n">total_u</span> <span class="o">=</span> <span class="n">u1</span> <span class="o">+</span> <span class="n">u2</span>
+
+<span class="n">total_with_unknown</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'Female'</span><span class="p">:</span> <span class="p">[</span><span class="n">total_f</span><span class="p">],</span>
+    <span class="s">'Male'</span><span class="p">:</span> <span class="p">[</span><span class="n">total_m</span><span class="p">],</span>
+    <span class="s">'Unknown'</span><span class="p">:</span> <span class="p">[</span><span class="n">total_u</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">total_without_unknown</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'Female'</span><span class="p">:</span> <span class="p">[</span><span class="n">total_f</span><span class="p">],</span>
+    <span class="s">'Male'</span><span class="p">:</span> <span class="p">[</span><span class="n">total_m</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">total_without_unknown</span>
+</pre></table></code></div></div><div><table border="1" class="dataframe"><thead><tr style="text-align: right;"><th><th>Female<th>Male<tbody><tr><th>0<td>353<td>486</table></div><h3 id="plots"><span class="mr-2">Plots</span><a href="#plots" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><p>Lets plot the results with and without the unknown gender.</p><p><img data-src="/attachments/images/2022-02-28-Gender_Gap_Nature_History_Books2.jpg" alt="Gender Gap" data-proofer-ignore></p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">mylabels</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Female"</span><span class="p">,</span> <span class="s">"Male"</span><span class="p">]</span>
+<span class="n">mycolors</span> <span class="o">=</span> <span class="p">[</span><span class="s">"#34595a"</span><span class="p">,</span> <span class="s">"#a0c293"</span><span class="p">]</span>
+
+<span class="c1">#controls default text size
+</span><span class="n">plt</span><span class="p">.</span><span class="n">rc</span><span class="p">(</span><span class="s">'font'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># plot size
+</span><span class="n">plt</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s">"figure.figsize"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+
+<span class="c1">#set title font to size 50
+</span><span class="n">plt</span><span class="p">.</span><span class="n">rc</span><span class="p">(</span><span class="s">'axes'</span><span class="p">,</span> <span class="n">titlesize</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span> 
+
+<span class="n">plt</span><span class="p">.</span><span class="n">pie</span><span class="p">(</span><span class="n">total_without_unknown</span><span class="p">,</span> 
+        <span class="n">labels</span> <span class="o">=</span> <span class="n">mylabels</span><span class="p">,</span> 
+        <span class="n">autopct</span> <span class="o">=</span><span class="s">'%1.1f%%'</span><span class="p">,</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">mycolors</span><span class="p">,</span>
+        <span class="n">wedgeprops</span> <span class="o">=</span> <span class="p">{</span><span class="s">"edgecolor"</span> <span class="p">:</span> <span class="s">"black"</span><span class="p">,</span>
+                      <span class="s">'linewidth'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                      <span class="s">'antialiased'</span><span class="p">:</span> <span class="bp">True</span><span class="p">})</span>
+<span class="c1">#plt.legend(loc='upper left')
+</span><span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Gender Gap'</span><span class="p">)</span>
+
+<span class="c1"># Save figure
+</span><span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'/Users/nat/Desktop/gender-gap.png'</span><span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Display the graph onto the screen
+</span><span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span> 
+</pre></table></code></div></div><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre><td class="rouge-code"><pre><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">()</span>
+
+<span class="n">mylabels1</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Female"</span><span class="p">,</span> <span class="s">"Male"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">]</span>
+<span class="n">mycolors1</span> <span class="o">=</span> <span class="p">[</span><span class="s">"#34595a"</span><span class="p">,</span> <span class="s">"#a0c293"</span><span class="p">,</span> <span class="s">"#f0cfc3"</span><span class="p">]</span>
+
+<span class="n">mylabels2</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Female"</span><span class="p">,</span> <span class="s">"Male"</span><span class="p">]</span>
+<span class="n">mycolors2</span> <span class="o">=</span> <span class="p">[</span><span class="s">"#34595a"</span><span class="p">,</span> <span class="s">"#a0c293"</span><span class="p">]</span>
+
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="p">.</span><span class="mi">5</span><span class="p">],</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="p">.</span><span class="n">pie</span><span class="p">(</span><span class="n">total_with_unknown</span><span class="p">,</span> 
+        <span class="n">labels</span><span class="o">=</span><span class="n">mylabels1</span><span class="p">,</span> 
+        <span class="n">radius</span> <span class="o">=</span> <span class="mf">1.2</span><span class="p">,</span>
+        <span class="n">autopct</span> <span class="o">=</span><span class="s">'%1.1f%%'</span><span class="p">,</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">mycolors1</span><span class="p">,</span>
+        <span class="n">wedgeprops</span> <span class="o">=</span> <span class="p">{</span><span class="s">"edgecolor"</span> <span class="p">:</span> <span class="s">"black"</span><span class="p">,</span>
+                      <span class="s">'linewidth'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                      <span class="s">'antialiased'</span><span class="p">:</span> <span class="bp">True</span><span class="p">})</span>
+
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_axes</span><span class="p">([.</span><span class="mi">5</span><span class="p">,</span> <span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="p">.</span><span class="mi">5</span><span class="p">],</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax2</span><span class="p">.</span><span class="n">pie</span><span class="p">(</span><span class="n">total_without_unknown</span><span class="p">,</span> 
+        <span class="n">labels</span><span class="o">=</span><span class="n">mylabels2</span><span class="p">,</span> 
+        <span class="n">radius</span> <span class="o">=</span> <span class="mf">1.2</span><span class="p">,</span>
+        <span class="n">autopct</span> <span class="o">=</span><span class="s">'%1.1f%%'</span><span class="p">,</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="n">mycolors2</span><span class="p">,</span>
+        <span class="n">wedgeprops</span> <span class="o">=</span> <span class="p">{</span><span class="s">"edgecolor"</span> <span class="p">:</span> <span class="s">"black"</span><span class="p">,</span>
+                      <span class="s">'linewidth'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                      <span class="s">'antialiased'</span><span class="p">:</span> <span class="bp">True</span><span class="p">})</span>
+
+<span class="n">ax1</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Gender Gap'</span><span class="p">)</span>
+<span class="c1">#ax2.set_title('Title for ax2')
+</span><span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</pre></table></code></div></div><h2 id="references"><span class="mr-2">References</span><a href="#references" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><ol><li>Cima, R. (2017) <em>The Gender Balance of The New York Times Best Seller List</em>, <em>The Pudding</em>. Available at: <a href="https://pudding.cool/2017/06/best-sellers/index.html">https://pudding.cool/2017/06/best-sellers/index.html</a> (Accessed: 1 March 2022).<li>Holman, L., Stuart-Fox, D. and Hauser, C.E. (2018) ‘The gender gap in science: How long until women are equally represented?’, <em>PLOS Biology</em>. Edited by C. Sugimoto, 16(4), p. e2004956. doi:<a href="https://doi.org/10.1371/journal.pbio.2004956">10.1371/journal.pbio.2004956</a>.<li>Reno, A. (2020) <em>Author gender identity added to NoveList</em>, EBSCO Information Services, Inc. Available at: <a href="https://www.ebsco.com/blogs/novelist/author-gender-identity-added-novelist">https://www.ebsco.com/blogs/novelist/author-gender-identity-added-novelist</a> (Accessed: 25 February 2022).</ol><h2 id="linked-sources"><span class="mr-2">Linked Sources</span><a href="#linked-sources" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><ol><li>The code for analysing gender of nature history writers by using VIAF dataset <a href="https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/0-Gender-Gap-in-Nature-History-Books-IVAF.ipynb">code</a><li>Web scraping Book Depository Webpage <a href="https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/1-Web-Scraping-BookDepository.ipynb">code</a><li>How to work with 10GB VIAF dataset <a href="https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/2-Working-With-Downloaded-VIAF-Dataset.ipynb">code</a><li>Get Gender Information From a Persons’ VIAF page <a href="https://github.com/natarslan/Gender-Gap-in-Nature-History-Books/blob/main/3-Get-Gender-Info-From-VIAF-Webpage.ipynb">code</a></ol></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/natural-science/'>Natural Science</a>, <a href='/categories/gender/'>Gender</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/gender/" class="post-tag no-text-decoration" >gender</a> <a href="/tags/books/" class="post-tag no-text-decoration" >books</a> <a href="/tags/nature-history/" class="post-tag no-text-decoration" >nature-history</a> <a href="/tags/python/" class="post-tag no-text-decoration" >python</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=Gender Gap in Nature History Books (Method: Not Preferred) - Nat Arslan&amp;url=https://nat-arslan.github.io//posts/Gender-Gap-In-Nature-History-Books/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=Gender Gap in Nature History Books (Method: Not Preferred) - Nat Arslan&amp;u=https://nat-arslan.github.io//posts/Gender-Gap-In-Nature-History-Books/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=https://nat-arslan.github.io//posts/Gender-Gap-In-Nature-History-Books/&amp;text=Gender Gap in Nature History Books (Method: Not Preferred) - Nat Arslan" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" data-title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/Obsidian-PostgreSQL-Python/">Using Obsidian, PostgreSQL and Python to Analyse & Visualise Notes</a><li><a href="/posts/Interactive-Webmap-Django/">Interactive Webmap with Django, Leaflet and PostGIS</a><li><a href="/posts/Sea-Level-Osaka/">Estimating the Sea Level Rise for 2100 in Osaka, Japan</a><li><a href="/posts/Thesis/">Assessing seagrass vulnerability to coastal erosion in Madagascar</a><li><a href="/posts/Change-Detection/">Change Detection: Comparing Methods for Natural Hazard Quantification using Remote Sensing and GIS</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/python/">python</a> <a class="post-tag" href="/tags/gis/">gis</a> <a class="post-tag" href="/tags/remote-sensing/">remote sensing</a> <a class="post-tag" href="/tags/satellite/">satellite</a> <a class="post-tag" href="/tags/books/">books</a> <a class="post-tag" href="/tags/gender/">gender</a> <a class="post-tag" href="/tags/nature-history/">nature-history</a> <a class="post-tag" href="/tags/arcgis/">arcgis</a> <a class="post-tag" href="/tags/atlas/">atlas</a> <a class="post-tag" href="/tags/bathymetry/">bathymetry</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="tail-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/Gender-Gap-In-Nature-History-Books-NLTK/"><div class="card-body"> <em class="timeago small" data-ts="1646002800" > 2022-02-28 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Gender Gap in Nature History Books (Method: Preferred)</h3><div class="text-muted small"><p> 1 About the project COMING SOON 🤓 2 Code 1 2 3 4 5 6 # Source: https://www.geeksforgeeks.org/python-gender-identification-by-name-using-nltk/ # importing libraries import random from nltk.corpus ...</p></div></div></a></div><div class="card"> <a href="/posts/Thesis/"><div class="card-body"> <em class="timeago small" data-ts="1617228000" > 2021-04-01 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Assessing seagrass vulnerability to coastal erosion in Madagascar</h3><div class="text-muted small"><p> My interdisciplinary thesis was part of both Department of Physical Geography &amp;amp; Department of Ecology, Environment and Plant Sciences (DEEP) in Stockholm University. The entire project was aut...</p></div></div></a></div><div class="card"> <a href="/posts/GEBCO/"><div class="card-body"> <em class="timeago small" data-ts="1651356000" > 2022-05-01 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Visualising Bathymetry Data With Python</h3><div class="text-muted small"><p> In 2020, I wrote my thesis where I created a turbidity risk index for seagrass beds in Tsimipaika Bay in northwestern Madagascar. In the beginning of my research I used GEBCO data to observe the ba...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/Thesis/" class="btn btn-outline-primary" prompt="Older"><p>Assessing seagrass vulnerability to coastal erosion in Madagascar</p></a> <a href="/posts/Gender-Gap-In-Nature-History-Books-NLTK/" class="btn btn-outline-primary" prompt="Newer"><p>Gender Gap in Nature History Books (Method: Preferred)</p></a></div></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center text-muted"><div class="footer-left"><p class="mb-0"> © 2022 <a href="https://twitter.com/username">Nat Arslan</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/python/">python</a> <a class="post-tag" href="/tags/gis/">gis</a> <a class="post-tag" href="/tags/remote-sensing/">remote sensing</a> <a class="post-tag" href="/tags/satellite/">satellite</a> <a class="post-tag" href="/tags/books/">books</a> <a class="post-tag" href="/tags/gender/">gender</a> <a class="post-tag" href="/tags/nature-history/">nature-history</a> <a class="post-tag" href="/tags/arcgis/">arcgis</a> <a class="post-tag" href="/tags/atlas/">atlas</a> <a class="post-tag" href="/tags/bathymetry/">bathymetry</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/en.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/app.js"></script>
