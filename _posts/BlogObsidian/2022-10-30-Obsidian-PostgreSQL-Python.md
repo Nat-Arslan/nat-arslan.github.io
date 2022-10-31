@@ -1,5 +1,5 @@
 ---
-title: "Using Obsidian, PostgreSQL and Python to Visualise Notes"
+title: "Using Obsidian, PostgreSQL and Python to Analyse & Visualise Notes"
 date: 2022-10-30
 tags: [python, sql, notetaking] # TAG names should always be lowercase
 toc: false
@@ -15,7 +15,9 @@ Github [repository](https://github.com/natarslan/Obsidian-PostgreSQL-Python) for
 
 ---
 
-I use [Obsidian](https://obsidian.md) to write down notes and my journal in markdown format. There is an Obsidian [plugin](https://github.com/clouedoc/postgresql-obsidian) which makes it easy to send the metadata (YAML) of each file to PostgreSQL database. From there on I can connect to the database and analyse my journal entries with Python. Nice thing is that, this can be done to any kind of notes (not restricted to journal files). Say for instance I can analyse meeting notes etc. Here is the brief workflow:
+I use [Obsidian](https://obsidian.md) to write down notes and my journal in markdown format. The app allows me to create relational notes. I can link these notes to each other, graph this relationship and use tags or dosens of plugins to make sense of my notes. But I always felt I needed to see more patterns and connections. And what is a better tool than Python to achieve this? 
+
+There is an Obsidian [plugin](https://github.com/clouedoc/postgresql-obsidian) which makes it easy to send the metadata (YAML) of each file to PostgreSQL database. From there on I can connect to the database and analyse my journal entries with Python. Here is my brief workflow:
 
 1. Keep taking notes in Obsidian
 	1. Important to have consistent metadata (YAML) section. Some example things that can be tracked/recorded are: date, mood, weather, location etc.
@@ -43,5 +45,9 @@ The steps in Python are briefly:
 4. Edit dataframe if necessary 
 5. Convert dataframe to GeoPandas and map with IpyLeaflet
 6. Plot data
-7. Use Streamlit to create a dashboard if you prefer
+7. (Optional) Use Streamlit to create a dashboard if you prefer
+
+To reveal further connection between the notes, one can even use *dataframe.corr()* function to see the correlation between metadata fields. This can help answer questions like "Do I feel better on the days where I have a walk?".
+
+I know there is a lot of benefit of keeping a hand written journal. But I need to be able to analyse the information that I'm documenting. Sending data to PostgreSQL and then to Python proved to be a very efficient way to do this.
 
