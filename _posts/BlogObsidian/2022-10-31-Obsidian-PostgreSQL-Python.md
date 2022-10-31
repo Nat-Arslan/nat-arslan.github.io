@@ -1,12 +1,12 @@
 ---
 title: "Using Obsidian, PostgreSQL and Python to Visualise Notes"
-date: 
-categories: []
+date: 2022-10-31
+categories: 
 tags: [python, sql, notetaking] # TAG names should always be lowercase
 toc: false
 comments: false
 image:
-  src: /attachments/images/2022-10-31-Obsidian-PostgreSQL-Python.jpeg
+  path: /attachments/images/2022-10-31-Obsidian-PostgreSQL-Python.jpeg
   width: 1000   # in pixels
   height: 400   # in pixels
   alt: 
