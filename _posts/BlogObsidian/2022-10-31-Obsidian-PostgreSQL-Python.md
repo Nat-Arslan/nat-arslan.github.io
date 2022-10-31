@@ -26,3 +26,4 @@ I use Obsidian to write down notes and my journal. The Obsidian plugin makes it 
 	4. Map with GeoPandas and IpyLeaflet
 	5. Plot data
 	6. Use Streamlit to create a dashboard if you prefer
+
