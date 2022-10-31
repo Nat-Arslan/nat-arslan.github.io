@@ -2,7 +2,7 @@
 title: "Using Obsidian, PostgreSQL and Python to Visualise Notes"
 date: 2022-10-31
 categories: [Coding]
-tags: [python, sql, note-taking] # TAG names should always be lowercase
+tags: [python, sql, notetaking] # TAG names should always be lowercase
 toc: false
 comments: false
 image:
@@ -26,4 +26,4 @@ I use Obsidian to write down notes and my journal. The Obsidian plugin makes it 
 	3. Edit dataframe if necessary
 	4. Map with GeoPandas and IpyLeaflet
 	5. Plot data
-	6. Use Steramlit to create a dashboard if you prefer
+	6. Use Streamlit to create a dashboard if you prefer
