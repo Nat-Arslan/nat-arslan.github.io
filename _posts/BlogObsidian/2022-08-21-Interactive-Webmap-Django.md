@@ -1,6 +1,5 @@
 ---
 title: "Interactive Webmap with Django, Leaflet and PostGIS"
-date: 
 categories: [Coding, Interactive Maps]
 tags: [python, webdev, leaflet, django, postgis, earthquake, javascript] # TAG names should always be lowercase
 toc: true
