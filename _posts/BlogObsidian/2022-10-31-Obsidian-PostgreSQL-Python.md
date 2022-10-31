@@ -1,6 +1,7 @@
 ---
 title: "Using Obsidian, PostgreSQL and Python to Visualise Notes"
 date: 2022-10-31
+future: true
 categories: 
 tags: [python, sql, notetaking] # TAG names should always be lowercase
 toc: false
